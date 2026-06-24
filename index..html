@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGC Global Pathway | A Global Path For You</title>
+<meta name="description" content="RGC Global Pathway — powered by Raty's Global Consortium — is an international education and talent development consortium partnering with higher-education institutions across India, UAE, and Kingdom of Saudi Arabia to strengthen student employability, talent visibility, and placement readiness.">
+<meta name="keywords" content="RGC Global Pathway, Raty's Global Consortium, skill training, talent development, placement, TalentBridge, SkillLab, TalentOS, soft skills, technical training, corporate training, rehabilitation training, India, UAE, Saudi Arabia">
+<meta name="author" content="RGC Global Pathway — Raty's Global Consortium Pvt. Ltd.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="RGC Global Pathway | A Global Path For You">
+<meta property="og:description" content="Empowering Educational Institutions to Develop, Showcase & Place Student Talent. Powered by Raty's Global Consortium.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ratysglobalconsortium.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RGC Global Pathway | A Global Path For You">
+<meta name="twitter:description" content="International Education & Talent Development — India · UAE · Kingdom of Saudi Arabia">
+<link rel="canonical" href="https://www.ratysglobalconsortium.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1B3E;
+    --cobalt: #1A3A8F;
+    --sky: #2D7DD2;
+    --teal: #00B4C6;
+    --gold: #C8A84B;
+    --white: #FFFFFF;
+    --off: #F4F6FB;
+    --muted: #8A96AA;
+    --text: #1C2540;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-ui: 'Space Grotesk', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px;
+    height: 72px;
+    background: rgba(13,27,62,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200,168,75,0.2);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 38px; height: 38px;
+    position: relative; flex-shrink: 0;
+  }
+  .logo-mark svg { width: 100%; height: 100%; }
+  .logo-text {
+    font-family: var(--font-ui);
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .logo-text span { color: var(--teal); display: block; font-weight: 400; font-size: 10px; letter-spacing: 0.14em; }
+  .logo-text .powered { color: var(--gold); font-weight:500; }
+  .nav-links {
+    display: flex; gap: 36px; list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 10px 24px;
+    border: 1px solid var(--gold);
+    color: var(--gold); text-decoration: none;
+    transition: all 0.25s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+  /* ── PAGE SECTIONS ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── HOME ── */
+  .hero {
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+    padding: 120px 60px 80px;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(13,27,62,0.92) 0%, rgba(10,34,104,0.88) 50%, rgba(6,21,69,0.95) 100%);
+    z-index: 0;
+  }
+  @keyframes kenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.06); }
+  }
+  .hero {
+    animation: kenBurns 18s ease-in-out infinite alternate;
+  }
+  .hero::before { animation: none; }
+  .hero-grid { position: relative; z-index: 1; }
+  .hero-orb { z-index: 0; }
+  .scroll-hint { z-index: 2; }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+    max-width: 1200px; margin: 0 auto; width: 100%;
+  }
+  .hero-orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); pointer-events: none;
+  }
+  .orb1 { width: 500px; height: 500px; top: -100px; right: -100px; background: rgba(45,125,210,0.18); }
+  .orb2 { width: 300px; height: 300px; bottom: 50px; left: 100px; background: rgba(0,180,198,0.12); }
+  .orb3 { width: 200px; height: 200px; top: 200px; right: 300px; background: rgba(200,168,75,0.08); }
+
+  .hero-eyebrow {
+    font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--teal);
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 24px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px; background: var(--teal);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5.5vw, 82px);
+    font-weight: 300; line-height: 1.05;
+    color: var(--white); margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--teal);
+    font-weight: 600;
+  }
+  .hero-sub {
+    font-size: 16px; line-height: 1.75;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px; margin-bottom: 44px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 16px 36px; cursor: pointer;
+    background: linear-gradient(135deg, var(--teal), var(--sky));
+    color: var(--white); border: none; text-decoration: none;
+    transition: opacity 0.25s, transform 0.25s;
+    display: inline-block;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+  .btn-outline {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 15px 36px; cursor: pointer;
+    background: transparent;
+    color: var(--white); border: 1px solid rgba(255,255,255,0.3);
+    text-decoration: none; transition: all 0.25s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--white); }
+
+  /* hero right visual */
+  .hero-visual {
+    position: relative; display: flex; align-items: center; justify-content: center;
+  }
+  .hero-card-stack {
+    position: relative; width: 100%; max-width: 460px;
+  }
+  .h-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 2px;
+    padding: 28px 32px;
+  }
+  .h-card-main {
+    margin-bottom: 20px;
+  }
+  .h-card-label {
+    font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 16px;
+  }
+  .h-card-title {
+    font-family: var(--font-display); font-size: 26px; font-weight: 600;
+    color: var(--white); margin-bottom: 10px;
+  }
+  .h-card-body {
+    font-size: 13px; line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+  }
+  .h-card-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .h-mini-card {
+    background: rgba(0,180,198,0.08);
+    border: 1px solid rgba(0,180,198,0.2);
+    border-radius: 2px; padding: 18px 20px;
+  }
+  .h-mini-num {
+    font-family: var(--font-display); font-size: 32px; font-weight: 600;
+    color: var(--teal); line-height: 1;
+  }
+  .h-mini-label {
+    font-size: 11px; color: rgba(255,255,255,0.5);
+    margin-top: 4px; line-height: 1.4;
+  }
+  .hero-since {
+    position: absolute; top: -20px; right: -20px;
+    width: 80px; height: 80px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    background: var(--navy);
+  }
+  .hero-since span:first-child {
+    font-family: var(--font-ui); font-size: 9px; font-weight: 600;
+    letter-spacing: 0.1em; color: var(--gold); text-transform: uppercase;
+  }
+  .hero-since span:last-child {
+    font-family: var(--font-display); font-size: 20px; font-weight: 600;
+    color: var(--white);
+  }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .scroll-hint span {
+    font-family: var(--font-ui); font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, rgba(0,180,198,0.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; } 50% { opacity: 1; }
+  }
+
+  /* ── PILLARS ── */
+  .pillars {
+    padding: 100px 60px;
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    position: relative;
+  }
+  .pillars::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(244,246,251,0.96);
+    z-index: 0;
+  }
+  .pillars .section-header, .pillars .pillars-grid { position: relative; z-index: 1; }
+  .section-header {
+    max-width: 1200px; margin: 0 auto 64px;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 40px;
+  }
+  .section-eyebrow {
+    font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 3.5vw, 52px);
+    font-weight: 300; color: var(--navy);
+    line-height: 1.1;
+  }
+  .section-title strong { font-weight: 600; }
+  .section-sub {
+    font-size: 15px; line-height: 1.75;
+    color: var(--muted); max-width: 360px;
+  }
+  .pillars-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  .pillar-card {
+    background: var(--white);
+    padding: 48px 40px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.25s, transform 0.25s;
+    cursor: default;
+  }
+  .pillar-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+  .pillar-num {
+    font-family: var(--font-display); font-size: 64px; font-weight: 300;
+    color: rgba(13,27,62,0.07); line-height: 1; margin-bottom: 20px;
+    user-select: none;
+  }
+  .pillar-icon {
+    width: 44px; height: 44px; margin-bottom: 20px;
+  }
+  .pillar-icon svg { width: 100%; height: 100%; }
+  .pillar-name {
+    font-family: var(--font-ui); font-size: 15px; font-weight: 700;
+    color: var(--navy); margin-bottom: 12px;
+  }
+  .pillar-desc {
+    font-size: 14px; line-height: 1.75; color: var(--muted);
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 100px 60px;
+    background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    position: relative;
+  }
+  .services::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(13,27,62,0.93);
+    z-index: 0;
+  }
+  .services > * { position: relative; z-index: 1; }
+  .services .section-title { color: var(--white); }
+  .services .section-eyebrow { color: var(--teal); }
+  .services-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 44px 48px;
+    transition: background 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; width: 3px; height: 0;
+    background: var(--teal);
+    transition: height 0.35s;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.07); }
+  .service-card:hover::before { height: 100%; }
+  .service-tag {
+    font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 18px;
+    display: inline-block;
+  }
+  .service-name {
+    font-family: var(--font-display); font-size: 26px; font-weight: 600;
+    color: var(--white); margin-bottom: 14px;
+  }
+  .service-desc {
+    font-size: 14px; line-height: 1.75;
+    color: rgba(255,255,255,0.5);
+  }
+  .service-modules {
+    margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .module-tag {
+    font-family: var(--font-ui); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    background: rgba(0,180,198,0.12);
+    color: rgba(0,180,198,0.85);
+    border: 1px solid rgba(0,180,198,0.2);
+  }
+
+  /* ── PARTNERS STRIP ── */
+  .partners-strip {
+    padding: 70px 60px;
+    background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    border-top: 1px solid rgba(13,27,62,0.06);
+    position: relative;
+  }
+  .partners-strip::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(244,246,251,0.96);
+    z-index: 0;
+  }
+  .partners-strip > * { position: relative; z-index: 1; }
+  .partners-strip .section-eyebrow { text-align: center; margin-bottom: 40px; }
+  .partners-logos {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; flex-wrap: wrap;
+    gap: 32px 48px; align-items: center; justify-content: center;
+  }
+  .partner-name {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+  .partner-name:hover { color: var(--navy); }
+
+  /* ── CERTIFICATIONS ── */
+  .certifications {
+    padding: 80px 60px;
+    background: var(--white);
+    position: relative;
+  }
+  .cert-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px;
+  }
+  .cert-item {
+    padding: 30px 24px;
+    border: 1px solid rgba(13,27,62,0.07);
+    text-align: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .cert-item:hover { border-color: var(--teal); background: var(--off); }
+  .cert-name {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    color: var(--navy); margin-bottom: 4px;
+  }
+  .cert-sub {
+    font-size: 11px; color: var(--muted);
+  }
+
+  /* ── PRESENCE BAND ── */
+  .presence {
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    padding: 80px 60px;
+    position: relative;
+  }
+  .presence::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(26,58,143,0.92), rgba(13,27,62,0.95));
+    z-index: 0;
+  }
+  .presence-inner { position: relative; z-index: 1; }
+  .presence-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center;
+  }
+  .presence h2 {
+    font-family: var(--font-display); font-size: 44px; font-weight: 300;
+    color: var(--white); line-height: 1.1; margin-bottom: 16px;
+  }
+  .presence h2 strong { font-weight: 600; color: var(--teal); }
+  .presence-sub { font-size: 14px; color: rgba(255,255,255,0.55); }
+  .presence-locations {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .loc-block {
+    border-left: 2px solid rgba(0,180,198,0.4);
+    padding-left: 20px;
+  }
+  .loc-flag { font-size: 22px; margin-bottom: 8px; }
+  .loc-country {
+    font-family: var(--font-ui); font-size: 13px; font-weight: 700;
+    color: var(--white); margin-bottom: 6px;
+  }
+  .loc-cities {
+    font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.5);
+  }
+
+  /* ── STATS ── */
+  .stats {
+    background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    padding: 60px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+  .stats::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(13,27,62,0.91);
+    z-index: 0;
+  }
+  .stats-inner { position: relative; z-index: 1; }
+  .stats-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; border: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item {
+    padding: 44px 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--font-display); font-size: 52px; font-weight: 600;
+    color: var(--teal); line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-family: var(--font-ui); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ── CTA ── */
+  .home-cta {
+    padding: 120px 60px;
+    background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    text-align: center;
+    position: relative;
+  }
+  .home-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(255,255,255,0.94);
+    z-index: 0;
+  }
+  .home-cta > * { position: relative; z-index: 1; }
+  .home-cta .section-eyebrow { justify-content: center; margin-bottom: 20px; }
+  .home-cta h2 {
+    font-family: var(--font-display); font-size: clamp(36px, 4vw, 58px);
+    font-weight: 300; color: var(--navy); margin-bottom: 20px;
+  }
+  .home-cta h2 strong { font-weight: 600; }
+  .home-cta p {
+    font-size: 16px; color: var(--muted);
+    max-width: 540px; margin: 0 auto 44px; line-height: 1.75;
+  }
+  .btn-dark {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 16px 40px; cursor: pointer;
+    background: var(--navy); color: var(--white); border: none;
+    text-decoration: none; transition: background 0.25s; display: inline-block;
+    margin: 0 8px;
+  }
+  .btn-dark:hover { background: var(--cobalt); }
+
+  /* ── ABOUT PAGE ── */
+  .about-hero {
+    min-height: 50vh;
+    background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    display: flex; align-items: flex-end;
+    padding: 120px 60px 80px;
+    position: relative; overflow: hidden;
+  }
+  .about-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(6,21,69,0.93) 0%, rgba(13,27,62,0.88) 60%, rgba(10,34,104,0.92) 100%);
+    z-index: 0;
+  }
+  .about-hero-inner { position: relative; z-index: 1; }
+  .about-hero-inner {
+    max-width: 1200px; width: 100%;
+    margin: 0 auto;
+  }
+  .about-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 5vw, 76px);
+    font-weight: 300; color: var(--white); line-height: 1.05;
+  }
+  .about-hero h1 strong { font-weight: 600; color: var(--teal); }
+  .about-hero p {
+    margin-top: 20px; font-size: 17px; line-height: 1.75;
+    color: rgba(255,255,255,0.6); max-width: 600px;
+  }
+
+  .about-mission {
+    padding: 100px 60px;
+    background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1800&q=80&fit=crop') right center / cover no-repeat;
+    position: relative;
+  }
+  .about-mission::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(255,255,255,0.96);
+    z-index: 0;
+  }
+  .about-mission-inner { position: relative; z-index: 1; }
+  .about-mission-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .mission-block { }
+  .mission-block h2 {
+    font-family: var(--font-display); font-size: 44px; font-weight: 300;
+    color: var(--navy); margin-bottom: 20px;
+  }
+  .mission-block h2 strong { font-weight: 600; }
+  .mission-block p {
+    font-size: 15px; line-height: 1.85; color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .mission-quote {
+    margin-top: 36px;
+    padding: 28px 32px;
+    border-left: 3px solid var(--teal);
+    background: var(--off);
+  }
+  .mission-quote p {
+    font-family: var(--font-display); font-size: 22px; font-weight: 400;
+    color: var(--navy); line-height: 1.5; margin: 0;
+  }
+
+  .values-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  }
+  .value-item {
+    padding: 32px 36px;
+    border: 1px solid rgba(13,27,62,0.07);
+  }
+  .value-icon {
+    font-size: 24px; margin-bottom: 14px;
+  }
+  .value-name {
+    font-family: var(--font-ui); font-size: 13px; font-weight: 700;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .value-desc {
+    font-size: 13px; line-height: 1.7; color: var(--muted);
+  }
+
+  /* Experts */
+  .experts {
+    padding: 100px 60px;
+    background: url('https://images.unsplash.com/photo-1530099486328-e021101a494a?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    position: relative;
+  }
+  .experts::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(244,246,251,0.95);
+    z-index: 0;
+  }
+  .experts > * { position: relative; z-index: 1; }
+  .experts-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+    margin-top: 60px;
+  }
+  .expert-card {
+    background: var(--white);
+    padding: 40px 36px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .expert-card:hover { border-color: var(--gold); }
+  .expert-country {
+    font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 14px;
+  }
+  .expert-name {
+    font-family: var(--font-display); font-size: 22px; font-weight: 600;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .expert-role {
+    font-size: 13px; color: var(--muted); line-height: 1.6;
+  }
+
+  /* NAPS */
+  .naps-band {
+    padding: 60px;
+    background: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    text-align: center;
+    position: relative;
+  }
+  .naps-band::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(13,27,62,0.93);
+    z-index: 0;
+  }
+  .naps-band > * { position: relative; z-index: 1; }
+  .naps-band p {
+    max-width: 700px; margin: 0 auto;
+    font-family: var(--font-display); font-size: 22px;
+    font-weight: 300; color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+  .naps-band strong { color: var(--teal); font-weight: 600; }
+
+  /* Vendor logos */
+  .vendors {
+    padding: 80px 60px;
+    background: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1800&q=80&fit=crop') center bottom / cover no-repeat;
+    position: relative;
+  }
+  .vendors::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(255,255,255,0.96);
+    z-index: 0;
+  }
+  .vendors > * { position: relative; z-index: 1; }
+  .vendor-logos {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; flex-wrap: wrap;
+    gap: 24px 40px; align-items: center; justify-content: center;
+    margin-top: 50px;
+  }
+  .vendor-pill {
+    padding: 10px 24px;
+    border: 1px solid rgba(13,27,62,0.12);
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    color: var(--navy); letter-spacing: 0.06em;
+    transition: all 0.2s;
+  }
+  .vendor-pill:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* ── CONTACT PAGE ── */
+  .contact-hero {
+    min-height: 44vh;
+    background: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    display: flex; align-items: flex-end;
+    padding: 120px 60px 80px;
+    position: relative; overflow: hidden;
+  }
+  .contact-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(13,27,62,0.92), rgba(6,21,69,0.95));
+    z-index: 0;
+  }
+  .contact-hero-inner { position: relative; z-index: 2; }
+  .contact-hero::before {
+    content: ''; position: absolute;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: rgba(0,180,198,0.1);
+    top: -100px; right: -50px;
+    filter: blur(60px);
+  }
+  .contact-hero-inner { max-width: 1200px; width: 100%; margin: 0 auto; }
+  .contact-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 5vw, 72px);
+    font-weight: 300; color: var(--white);
+  }
+  .contact-hero h1 strong { font-weight: 600; color: var(--teal); }
+  .contact-hero p {
+    margin-top: 16px; font-size: 16px;
+    color: rgba(255,255,255,0.55); max-width: 500px;
+  }
+
+  .contact-body {
+    padding: 100px 60px;
+    background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    position: relative;
+  }
+  .contact-body::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(244,246,251,0.97);
+    z-index: 0;
+  }
+  .contact-inner { position: relative; z-index: 1; }
+  .contact-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px;
+  }
+  .contact-info h2 {
+    font-family: var(--font-display); font-size: 38px; font-weight: 300;
+    color: var(--navy); margin-bottom: 32px;
+  }
+  .contact-info h2 strong { font-weight: 600; }
+  .info-item {
+    margin-bottom: 30px;
+  }
+  .info-label {
+    font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 8px;
+  }
+  .info-value {
+    font-size: 14px; color: var(--text); line-height: 1.7;
+  }
+  .info-value a { color: var(--text); text-decoration: none; }
+  .info-value a:hover { color: var(--teal); }
+
+  .contact-form {
+    background: var(--white);
+    padding: 52px 48px;
+    border-top: 3px solid var(--teal);
+  }
+  .form-title {
+    font-family: var(--font-display); font-size: 28px; font-weight: 600;
+    color: var(--navy); margin-bottom: 32px;
+  }
+  .form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-family: var(--font-ui); font-size: 11px;
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 14px 18px;
+    border: 1px solid rgba(13,27,62,0.12); border-radius: 0;
+    font-family: var(--font-body); font-size: 14px;
+    color: var(--text); background: var(--white);
+    transition: border-color 0.2s; outline: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--teal);
+  }
+  .form-group textarea { min-height: 120px; resize: vertical; }
+  .form-submit {
+    width: 100%; padding: 16px;
+    background: linear-gradient(135deg, var(--navy), var(--cobalt));
+    color: var(--white); border: none; cursor: pointer;
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    transition: opacity 0.25s;
+  }
+  .form-submit:hover { opacity: 0.85; }
+  .form-note {
+    margin-top: 14px; font-size: 12px; color: var(--muted); text-align: center;
+  }
+
+  .offices {
+    padding: 80px 60px;
+    background: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1800&q=80&fit=crop') center center / cover no-repeat;
+    position: relative;
+  }
+  .offices::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(255,255,255,0.96);
+    z-index: 0;
+  }
+  .offices > * { position: relative; z-index: 1; }
+  .offices-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+    margin-top: 50px;
+  }
+  .office-card {
+    padding: 40px 36px;
+    border: 1px solid rgba(13,27,62,0.07);
+    transition: border-color 0.2s;
+  }
+  .office-card:hover { border-color: var(--teal); }
+  .office-flag { font-size: 28px; margin-bottom: 16px; }
+  .office-country {
+    font-family: var(--font-ui); font-size: 14px; font-weight: 700;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .office-cities {
+    font-size: 13px; color: var(--muted); line-height: 1.8;
+  }
+  .office-phones {
+    margin-top: 16px; padding-top: 16px;
+    border-top: 1px solid rgba(13,27,62,0.07);
+    font-size: 13px; color: var(--muted); line-height: 1.8;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060F24;
+    padding: 60px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 24px;
+  }
+  .footer-brand {
+    font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--white);
+  }
+  .footer-tagline {
+    font-family: var(--font-display); font-size: 16px;
+    color: rgba(255,255,255,0.4); margin-top: 4px;
+    font-style: italic;
+  }
+  .footer-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .footer-links a {
+    font-family: var(--font-ui); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    transition: color 0.2s; cursor: pointer;
+  }
+  .footer-links a:hover { color: var(--teal); }
+  .footer-copy {
+    font-size: 11px; color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .pillars { padding: 60px 24px; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .section-header { flex-direction: column; align-items: flex-start; }
+    .services { padding: 60px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .partners-strip { padding: 50px 24px; }
+    .certifications { padding: 50px 24px; }
+    .cert-grid { grid-template-columns: repeat(2, 1fr); }
+    .presence { padding: 60px 24px; }
+    .presence-inner { grid-template-columns: 1fr; gap: 40px; }
+    .presence-locations { grid-template-columns: 1fr; }
+    .stats { padding: 40px 24px; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .home-cta { padding: 60px 24px; }
+    .about-hero { padding: 100px 24px 60px; }
+    .about-mission { padding: 60px 24px; }
+    .about-mission-inner { grid-template-columns: 1fr; gap: 40px; }
+    .experts { padding: 60px 24px; }
+    .experts-grid { grid-template-columns: 1fr; }
+    .vendors { padding: 60px 24px; }
+    .naps-band { padding: 40px 24px; }
+    .contact-hero { padding: 100px 24px 60px; }
+    .contact-body { padding: 60px 24px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-form { padding: 36px 28px; }
+    .offices { padding: 60px 24px; }
+    .offices-grid { grid-template-columns: 1fr; }
+    footer { padding: 40px 24px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showPage('home')">
+    <div class="logo-mark" style="width:48px;height:48px;">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="globeGrad" cx="45%" cy="38%" r="55%">
+            <stop offset="0%" stop-color="#2D6FBF"/>
+            <stop offset="60%" stop-color="#0D2B6B"/>
+            <stop offset="100%" stop-color="#061545"/>
+          </radialGradient>
+          <radialGradient id="globeShine" cx="35%" cy="30%" r="40%">
+            <stop offset="0%" stop-color="#4A9AE0" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#0D2B6B" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="arrowGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F5D97A"/>
+            <stop offset="40%" stop-color="#C8A84B"/>
+            <stop offset="100%" stop-color="#9A7A2A"/>
+          </linearGradient>
+          <linearGradient id="ringGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F5D97A"/>
+            <stop offset="50%" stop-color="#C8A84B"/>
+            <stop offset="100%" stop-color="#8A6820"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="0.8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Globe body -->
+        <circle cx="19" cy="22" r="14" fill="url(#globeGrad)"/>
+        <circle cx="19" cy="22" r="14" fill="url(#globeShine)"/>
+
+        <!-- Globe grid lines -->
+        <ellipse cx="19" cy="22" rx="5" ry="14" fill="none" stroke="#C8A84B" stroke-width="0.5" stroke-opacity="0.5"/>
+        <ellipse cx="19" cy="22" rx="10" ry="14" fill="none" stroke="#C8A84B" stroke-width="0.4" stroke-opacity="0.35"/>
+        <line x1="5" y1="22" x2="33" y2="22" stroke="#C8A84B" stroke-width="0.4" stroke-opacity="0.45"/>
+        <line x1="6" y1="17" x2="32" y2="17" stroke="#C8A84B" stroke-width="0.35" stroke-opacity="0.3"/>
+        <line x1="6" y1="27" x2="32" y2="27" stroke="#C8A84B" stroke-width="0.35" stroke-opacity="0.3"/>
+
+        <!-- Globe outline -->
+        <circle cx="19" cy="22" r="14" fill="none" stroke="#C8A84B" stroke-width="0.7" stroke-opacity="0.7"/>
+
+        <!-- Gold swoosh ring around globe -->
+        <path d="M 8 14 Q 24 4 38 16 Q 42 20 40 26" fill="none" stroke="url(#ringGold)" stroke-width="2.2" stroke-linecap="round" filter="url(#glow)"/>
+        <path d="M 8 30 Q 14 38 26 38 Q 34 38 40 30" fill="none" stroke="url(#ringGold)" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.6"/>
+
+        <!-- Arrow shooting up-right -->
+        <path d="M 28 8 L 45 3 L 40 18 Z" fill="url(#arrowGold)" filter="url(#glow)"/>
+        <line x1="19" y1="22" x2="42" y2="6" stroke="url(#arrowGold)" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      RGC Global Pathway
+      <span style="color:var(--gold);font-weight:500;font-size:9px;letter-spacing:0.14em;">Powered by Raty's Global Consortium</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" onclick="showPage('about')">About</a></li>
+    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="showPage('contact')">Partner With Us</a>
+</nav>
+
+<!-- ════════ HOME PAGE ════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-orb orb3"></div>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">International Education &amp; Talent Development</div>
+        <h1>Building<br><em>Global-Ready</em><br>Talent.</h1>
+        <p class="hero-sub">We partner with higher-education institutions to transform academic delivery into measurable student outcomes — placement readiness, talent visibility, and workforce confidence.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary" onclick="showPage('about')">Explore Our Model</a>
+          <a href="#" class="btn-outline" onclick="showPage('contact')">Engage With Us</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-stack">
+          <div class="hero-since"><span>Since</span><span>2019</span></div>
+          <div class="h-card h-card-main">
+            <div class="h-card-label">RGC Global Pathway Framework</div>
+            <div class="h-card-title">TalentBridge · SkillLab · TalentOS</div>
+            <div class="h-card-body">A structured, integrated ecosystem that unifies talent identification, skills development, and outcome intelligence into one institution-ready platform.</div>
+          </div>
+          <div class="h-card-row">
+            <div class="h-mini-card">
+              <div class="h-mini-num">98%</div>
+              <div class="h-mini-label">Average Daily Attendance</div>
+            </div>
+            <div class="h-mini-card">
+              <div class="h-mini-num">4.8</div>
+              <div class="h-mini-label">Placement Score (out of 5)</div>
+            </div>
+            <div class="h-mini-card">
+              <div class="h-mini-num">3</div>
+              <div class="h-mini-label">Countries of Operation</div>
+            </div>
+            <div class="h-mini-card">
+              <div class="h-mini-num">360+</div>
+              <div class="h-mini-label">Skill Modules</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section class="pillars">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">Our Integrated Framework</div>
+        <h2 class="section-title">Three Pillars.<br><strong>One Ecosystem.</strong></h2>
+      </div>
+      <p class="section-sub">Each pillar of RGC Global Pathway addresses a critical gap between education and employment — together forming a complete, scalable student development platform powered by Raty's Global Consortium.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-name">TalentBridge</div>
+        <p class="pillar-desc">Identifies, validates, and showcases student potential beyond academics — surfacing communication, leadership, creativity, and problem-solving through institution-endorsed visibility platforms.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-name">SkillLab</div>
+        <p class="pillar-desc">Delivers structured employability and future-skills programs — communication, aptitude, professional, and digital competencies aligned with global industry expectations and outcome-based education principles.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-name">TalentOS</div>
+        <p class="pillar-desc">The outcomes and intelligence layer — consolidating participation, skill acquisition, and readiness indicators into validated profiles and institutional reports that support placement planning and quality assurance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <div style="max-width:1200px;margin:0 auto 60px;">
+      <div class="section-eyebrow">What We Deliver</div>
+      <h2 class="section-title" style="color:var(--white);">Skills That Travel<br><strong>Across Borders.</strong></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-tag">SkillLab</span>
+        <div class="service-name">Soft Skills Training</div>
+        <p class="service-desc">360+ modules covering communication, emotional intelligence, leadership, and professional readiness — built for the modern global workplace.</p>
+        <div class="service-modules">
+          <span class="module-tag">Communication</span>
+          <span class="module-tag">Leadership</span>
+          <span class="module-tag">EQ</span>
+          <span class="module-tag">Cross-Cultural</span>
+          <span class="module-tag">Public Speaking</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-tag">SkillLab</span>
+        <div class="service-name">Technical Skills Training</div>
+        <p class="service-desc">Foundational to advanced IT competencies — programming, data, cloud, cybersecurity, and AI fundamentals aligned with digital-first workplaces.</p>
+        <div class="service-modules">
+          <span class="module-tag">Python · Java · C</span>
+          <span class="module-tag">Cloud & DevOps</span>
+          <span class="module-tag">Cybersecurity</span>
+          <span class="module-tag">AI & ML</span>
+          <span class="module-tag">Data Analytics</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-tag">SkillLab</span>
+        <div class="service-name">Corporate Training</div>
+        <p class="service-desc">Prepares learners to operate effectively within structured corporate environments — business etiquette, professional conduct, and workplace leadership.</p>
+        <div class="service-modules">
+          <span class="module-tag">Business Etiquette</span>
+          <span class="module-tag">Corporate Ethics</span>
+          <span class="module-tag">Stakeholder Comms</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-tag">Specialist Programme</span>
+        <div class="service-name">Rehabilitation Skill Training</div>
+        <p class="service-desc">Inclusive skill development for persons with Intellectual Disabilities, Autism Spectrum Conditions, and Behavioural Challenges — enabling independence and social participation.</p>
+        <div class="service-modules">
+          <span class="module-tag">Adaptive Behaviour</span>
+          <span class="module-tag">Emotional Regulation</span>
+          <span class="module-tag">Life Skills</span>
+          <span class="module-tag">Social Integration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Strip -->
+  <section class="partners-strip">
+    <div class="section-eyebrow">RGC Global Pathway · Trusted by Global Industry Leaders</div>
+    <div class="partners-logos">
+      <span class="partner-name">Yanmar</span>
+      <span class="partner-name">Spark Minda Foundation</span>
+      <span class="partner-name">Delphi TVS Technologies</span>
+      <span class="partner-name">Motherson Sumi Systems</span>
+      <span class="partner-name">UP</span>
+      <span class="partner-name">VTA</span>
+      <span class="partner-name">Foxconn</span>
+      <span class="partner-name">Dhoot Transmissions</span>
+      <span class="partner-name">Microtech</span>
+      <span class="partner-name">Kriya</span>
+      <span class="partner-name">Hyundai Polytech</span>
+      <span class="partner-name">Yorozu</span>
+      <span class="partner-name">Belrise Industries</span>
+      <span class="partner-name">Polyplastics</span>
+      <span class="partner-name">Besmak Components</span>
+      <span class="partner-name">Johnson Electric</span>
+      <span class="partner-name">Schneider Electric</span>
+      <span class="partner-name">HL Mando</span>
+      <span class="partner-name">DB Schenker</span>
+      <span class="partner-name">Athena Education</span>
+      <span class="partner-name">Ozon</span>
+      <span class="partner-name">DP World</span>
+      <span class="partner-name">World Star Holding</span>
+      <span class="partner-name">Lupin Pharmaceuticals</span>
+      <span class="partner-name">Biocon Biologics</span>
+      <span class="partner-name">Badghish Rehabilitation &amp; Healthcare</span>
+      <span class="partner-name">Cadila Pharmaceuticals</span>
+      <span class="partner-name">Sobha Realty</span>
+      <span class="partner-name">Saudi Aramco</span>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">360+</div>
+        <div class="stat-label">Skill Modules</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Nations of Operation</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4.8</div>
+        <div class="stat-label">Avg. Placement Score</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-label">Training Attendance Rate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Home CTA -->
+  <section class="home-cta">
+    <div class="section-eyebrow" style="display:flex;justify-content:center;">Ready to Transform Your Institution?</div>
+    <h2>Empowering People.<br><strong>Elevating Performance.</strong></h2>
+    <p>RGC Global Pathway — powered by Raty's Global Consortium — partners with institutions across India, United Arab Emirates, and Kingdom of Saudi Arabia to build placement-ready, globally competitive graduates.</p>
+    <a href="#" class="btn-dark" onclick="showPage('about')">Our Story</a>
+    <a href="#" class="btn-primary" onclick="showPage('contact')">Start a Conversation</a>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">RGC Global Pathway</div>
+        <div class="footer-tagline">Powered by Raty's Global Consortium Pvt. Ltd.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 RGC Global Pathway · Powered by Raty's Global Consortium Pvt. Ltd.</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════ ABOUT PAGE ════════ -->
+<div id="page-about" class="page">
+
+  <section class="about-hero">
+    <div class="orb1" style="position:absolute;width:500px;height:500px;top:-100px;right:-100px;background:rgba(45,125,210,0.15);filter:blur(80px);pointer-events:none;border-radius:50%;"></div>
+    <div class="about-hero-inner">
+      <div style="font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:12px;"><span style="display:block;width:32px;height:1px;background:var(--teal);"></span>About RGC Global Pathway</div>
+      <h1>A Strategic Partner,<br><strong>Not a Vendor.</strong></h1>
+      <p>RGC Global Pathway, powered by Raty's Global Consortium, was founded in 2019 with a clear purpose — to enable institutions to move from academic delivery to measurable student outcomes that meet evolving global workforce demands.</p>
+    </div>
+  </section>
+
+  <section class="about-mission">
+    <div class="about-mission-inner">
+      <div class="mission-block">
+        <div class="section-eyebrow">Who We Are</div>
+        <h2>International Education &amp; Talent<br><strong>Development Consortium</strong></h2>
+        <p>RGC Global Pathway, powered by Raty's Global Consortium, partners with higher-education institutions to strengthen student employability, talent visibility, and placement readiness in an increasingly competitive global environment.</p>
+        <p>We operate as a strategic partner — working alongside institutional leadership, faculty, and placement teams to deliver measurable student development, improved placement preparedness, and enhanced institutional credibility.</p>
+        <div class="mission-quote">
+          <p>"Bridging campus readiness with workforce demand through structured placement and talent preparation."</p>
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow" style="margin-bottom:24px;">Our Core Values</div>
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon">🌐</div>
+            <div class="value-name">Global Standards</div>
+            <div class="value-desc">Aligned with outcome-based education principles and international employability benchmarks.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">📊</div>
+            <div class="value-name">Outcome Intelligence</div>
+            <div class="value-desc">Every programme is tracked, measured, and reported — supporting continuous institutional improvement.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🤝</div>
+            <div class="value-name">Institutional Partnership</div>
+            <div class="value-desc">We embed within your ecosystem — not as a vendor, but as a long-term development partner.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">♿</div>
+            <div class="value-name">Inclusive Development</div>
+            <div class="value-desc">Dedicated programmes for learners with diverse needs — because talent exists across every spectrum.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Experts -->
+  <section class="experts">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-eyebrow">Global Faculty &amp; Expert Network</div>
+      <h2 class="section-title">Expertise Drawn<br><strong>From Across the World.</strong></h2>
+    </div>
+    <div class="experts-grid">
+      <div class="expert-card">
+        <div class="expert-country">🇵🇭 Philippines</div>
+        <div class="expert-name">Dr. Vina Cristina</div>
+        <div class="expert-role">Chief Behavioral Psychologist<br>Kingdom of Saudi Arabia</div>
+      </div>
+      <div class="expert-card">
+        <div class="expert-country">🇮🇳 India</div>
+        <div class="expert-name">Nizzar</div>
+        <div class="expert-role">Senior Quality Assurance Engineer<br>Amazon</div>
+      </div>
+      <div class="expert-card">
+        <div class="expert-country">🇺🇸 USA</div>
+        <div class="expert-name">Dr. Fedrick</div>
+        <div class="expert-role">Leadership in Technical Operations<br>International Expert</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="certifications" style="background: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1800&q=80&fit=crop') center center / cover no-repeat; position:relative;">
+  <div style="position:absolute;inset:0;background:rgba(244,246,251,0.96);z-index:0;"></div>
+  <div style="position:relative;z-index:1;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-eyebrow">Our Credentials</div>
+      <h2 class="section-title" style="margin-bottom:50px;">Certified &amp;<br><strong>Globally Recognised.</strong></h2>
+      <div class="cert-grid">
+        <div class="cert-item">
+          <div class="cert-name">ICTRD</div>
+          <div class="cert-sub">Business Management Expert</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">Rolls-Royce</div>
+          <div class="cert-sub">Certified Experts</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">IBMI Berlin</div>
+          <div class="cert-sub">Germany</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">University of Greenwich</div>
+          <div class="cert-sub">UK</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-name">World TESOL Academy</div>
+          <div class="cert-sub">Accredited Teaching</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vendors -->
+  <section class="vendors">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-eyebrow">Academic Vendor Network</div>
+      <h2 class="section-title" style="margin-bottom:8px;">We Prepare Students<br><strong>For World-Class Institutions.</strong></h2>
+      <p style="font-size:14px;color:var(--muted);margin-top:12px;">RGC Global Pathway, powered by Raty's Global Consortium, is an authorised vendor and preparation partner for globally recognised universities and certification bodies worldwide.</p>
+    </div>
+    <div class="vendor-logos">
+      <span class="vendor-pill">Cambridge English Qualifications</span>
+      <span class="vendor-pill">IELTS</span>
+      <span class="vendor-pill">London Business School</span>
+      <span class="vendor-pill">ERC Institute</span>
+      <span class="vendor-pill">De La Salle University, Manila</span>
+      <span class="vendor-pill">ITS Surabaya</span>
+      <span class="vendor-pill">Nanyang Technological University, Singapore</span>
+      <span class="vendor-pill">Universiti Kebangsaan Malaysia</span>
+    </div>
+  </section>
+
+  <!-- NAPS Band -->
+  <section class="naps-band">
+    <p>RGC Global Pathway is empaneled under <strong>NAPS — National Apprenticeship Promotion Scheme</strong> to support skill development and on-the-job apprenticeship training across India.</p>
+  </section>
+
+  <!-- Presence -->
+  <section class="presence">
+    <div class="presence-inner">
+      <div>
+        <h2>Operational<br>in <strong>3 Nations.</strong></h2>
+        <p class="presence-sub">A growing presence across South Asia and the Middle East, with institutional partnerships in major education and employment hubs.</p>
+      </div>
+      <div class="presence-locations">
+        <div class="loc-block">
+          <div class="loc-flag">🇮🇳</div>
+          <div class="loc-country">India</div>
+          <div class="loc-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai<br>Pondicherry</div>
+        </div>
+        <div class="loc-block">
+          <div class="loc-flag">🇦🇪</div>
+          <div class="loc-country">United Arab Emirates</div>
+          <div class="loc-cities">Abu Dhabi · Dubai<br>Sharjah</div>
+        </div>
+        <div class="loc-block">
+          <div class="loc-flag">🇸🇦</div>
+          <div class="loc-country">Kingdom of Saudi Arabia</div>
+          <div class="loc-cities">Jeddah<br>Riyadh</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">RGC Global Pathway</div>
+        <div class="footer-tagline">Powered by Raty's Global Consortium Pvt. Ltd.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 RGC Global Pathway · Powered by Raty's Global Consortium Pvt. Ltd.</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════ CONTACT PAGE ════════ -->
+<div id="page-contact" class="page">
+
+  <section class="contact-hero">
+    <div class="contact-hero-inner">
+      <div style="font-family:var(--font-ui);font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--teal);margin-bottom:18px;display:flex;align-items:center;gap:12px;"><span style="display:block;width:32px;height:1px;background:var(--teal);"></span>Get In Touch</div>
+      <h1>Let's Build<br><strong>Something Global.</strong></h1>
+      <p>Whether you're an institution, an employer, or an individual — we'd love to hear from you. Our team is present across India, United Arab Emirates, and Kingdom of Saudi Arabia.</p>
+    </div>
+  </section>
+
+  <section class="contact-body">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <h2>Reach<br><strong>Our Team.</strong></h2>
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="mailto:rgcglobalpathway@gmail.com">rgcglobalpathway@gmail.com</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">India</div>
+          <div class="info-value">
+            <a href="tel:+916385151007">+91 638 51 51 007</a><br>
+            <a href="tel:+916385151008">+91 638 51 51 008</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">United Arab Emirates</div>
+          <div class="info-value"><a href="tel:+971522923931">+971 52 292 3931</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Kingdom of Saudi Arabia</div>
+          <div class="info-value"><a href="tel:+966569832327">+966 56 983 2327</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Website</div>
+          <div class="info-value"><a href="http://www.ratysglobalconsortium.com">www.ratysglobalconsortium.com</a></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Training Modes</div>
+          <div class="info-value">Online · On Campus · SkillLab · Requested Premises</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Duration</div>
+          <div class="info-value">21 Days to 6 Months, Depends on the Programme</div>
+        </div>
+      </div>
+
+      <div class="contact-form" id="enquiry-box">
+        <div class="form-title">Send an Enquiry</div>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="form-success" style="display:none; text-align:center; padding:40px 20px;">
+          <div style="font-size:48px; margin-bottom:16px;">✅</div>
+          <div style="font-family:var(--font-display);font-size:26px;font-weight:600;color:var(--navy);margin-bottom:12px;">Message Sent!</div>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7;">Thank you for reaching out. Our team at RGC Global Pathway will respond within 1 business day at your email address.</p>
+          <button onclick="resetForm()" style="margin-top:24px;padding:12px 32px;background:var(--navy);color:white;border:none;cursor:pointer;font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Send Another →</button>
+        </div>
+
+        <!-- ERROR MESSAGE -->
+        <div id="form-error" style="display:none; background:#fff0f0; border:1px solid #ffcccc; padding:14px 18px; margin-bottom:20px; font-size:13px; color:#cc0000; line-height:1.6;">
+          ⚠️ Something went wrong. Please try again or email us directly at <strong>rgcglobalpathway@gmail.com</strong>
+        </div>
+
+        <!-- ACTUAL FORM -->
+        <form id="rgc-enquiry-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" name="first_name" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" name="last_name" placeholder="Your last name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="+91 00000 00000">
+          </div>
+          <div class="form-group">
+            <label>Organisation / Institution</label>
+            <input type="text" name="organisation" placeholder="College, company, or N/A">
+          </div>
+          <div class="form-group">
+            <label>I am a *</label>
+            <select name="enquiry_type" required>
+              <option value="">Select type</option>
+              <option>Higher Education Institution</option>
+              <option>Corporate / Employer</option>
+              <option>Individual Learner</option>
+              <option>Government Body</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Area of Interest *</label>
+            <select name="area_of_interest" required>
+              <option value="">Select programme</option>
+              <option>Soft Skills Training</option>
+              <option>Technical Skills Training</option>
+              <option>Corporate Training</option>
+              <option>Rehabilitation Skill Training</option>
+              <option>TalentBridge — Placement</option>
+              <option>Full RGC Framework</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea name="message" placeholder="Tell us about your institution's needs, expected cohort size, and timeline..." required></textarea>
+          </div>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="form-submit" id="submit-btn">Send Message →</button>
+          <p class="form-note">We respond within 1 business day. Your information is never shared.</p>
+        </form>
+      </div>
+
+      <script>
+        // ── Formspree submission handler ──
+        const FORMSPREE_ID = "xgojoazb"; // Formspree endpoint: https://formspree.io/f/xgojoazb
+
+        document.getElementById("rgc-enquiry-form").addEventListener("submit", async function(e) {
+          e.preventDefault();
+
+          const btn = document.getElementById("submit-btn");
+          const errorBox = document.getElementById("form-error");
+          const successBox = document.getElementById("form-success");
+          const form = e.target;
+
+          // Loading state
+          btn.textContent = "Sending...";
+          btn.disabled = true;
+          btn.style.opacity = "0.7";
+          errorBox.style.display = "none";
+
+          // Collect form data
+          const data = {};
+          new FormData(form).forEach((val, key) => { data[key] = val; });
+
+          try {
+            const res = await fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+              method: "POST",
+              headers: { "Content-Type": "application/json", "Accept": "application/json" },
+              body: JSON.stringify(data)
+            });
+
+            if (res.ok) {
+              // Show success
+              form.style.display = "none";
+              successBox.style.display = "block";
+              form.reset();
+            } else {
+              throw new Error("Server error");
+            }
+          } catch(err) {
+            errorBox.style.display = "block";
+            btn.textContent = "Send Message →";
+            btn.disabled = false;
+            btn.style.opacity = "1";
+          }
+        });
+
+        function resetForm() {
+          document.getElementById("form-success").style.display = "none";
+          document.getElementById("rgc-enquiry-form").style.display = "block";
+          const btn = document.getElementById("submit-btn");
+          btn.textContent = "Send Message →";
+          btn.disabled = false;
+          btn.style.opacity = "1";
+        }
+      </script>
+    </div>
+  </section>
+
+  <!-- Offices -->
+  <section class="offices">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-eyebrow">Our Offices</div>
+      <h2 class="section-title">Present Where<br><strong>You Need Us.</strong></h2>
+    </div>
+    <div class="offices-grid">
+      <div class="office-card">
+        <div class="office-flag">🇮🇳</div>
+        <div class="office-country">India</div>
+        <div class="office-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div>
+        <div class="office-phones">
+          +91 638 51 51 007<br>+91 638 51 51 008
+        </div>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">🇦🇪</div>
+        <div class="office-country">United Arab Emirates</div>
+        <div class="office-cities">Abu Dhabi · Dubai · Sharjah</div>
+        <div class="office-phones">+971 52 292 3931</div>
+      </div>
+      <div class="office-card">
+        <div class="office-flag">🇸🇦</div>
+        <div class="office-country">Kingdom of Saudi Arabia</div>
+        <div class="office-cities">Jeddah · Riyadh</div>
+        <div class="office-phones">+966 56 983 2327</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">RGC Global Pathway</div>
+        <div class="footer-tagline">Powered by Raty's Global Consortium Pvt. Ltd.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 RGC Global Pathway · Powered by Raty's Global Consortium Pvt. Ltd.</div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Animate stats on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.pillar-card, .service-card, .h-mini-card, .stat-item, .cert-item, .expert-card, .office-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+<!-- ── WHATSAPP FLOAT BUTTON ── -->
+<a href="https://wa.me/916385151007?text=Hello%20RGC%20Global%20Pathway%2C%20I%20would%20like%20to%20know%20more%20about%20your%20programmes."
+   target="_blank" rel="noopener"
+   style="
+     position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+     width: 58px; height: 58px; border-radius: 50%;
+     background: #25D366;
+     display: flex; align-items: center; justify-content: center;
+     box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+     transition: transform 0.2s, box-shadow 0.2s;
+     text-decoration: none;
+   "
+   onmouseover="this.style.transform='scale(1.12)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.45)'"
+   title="Chat with us on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15 2C8.373 2 3 7.373 3 14c0 2.385.668 4.61 1.826 6.5L3 27l6.674-1.752A11.955 11.955 0 0015 26c6.627 0 12-5.373 12-12S21.627 2 15 2z" fill="white"/>
+    <path d="M21.5 18.3c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.19-.24-.57-.49-.49-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35z" fill="#25D366"/>
+  </svg>
+</a>
+
+<!-- ── BACK TO TOP BUTTON ── -->
+<button id="back-to-top"
+  onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  style="
+    position: fixed; bottom: 96px; right: 28px; z-index: 9999;
+    width: 44px; height: 44px;
+    background: var(--navy); color: white; border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0; cursor: pointer; font-size: 18px;
+    display: none; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    transition: background 0.2s;
+  "
+  title="Back to top">↑</button>
+
+<script>
+  // Back to top visibility
+  window.addEventListener('scroll', function() {
+    const btn = document.getElementById('back-to-top');
+    if (window.scrollY > 400) {
+      btn.style.display = 'flex';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
