@@ -520,99 +520,388 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
   .services-grid{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── MEGA DROPDOWN ─────────────────────── */
+.has-drop{position:relative}
+.has-drop>a{cursor:pointer}
+.nav-arr{font-size:10px;transition:transform .25s;display:inline-block;margin-left:2px}
+.has-drop:hover .nav-arr{transform:rotate(180deg)}
+
+.mega-drop{
+  position:absolute;top:74px;left:50%;transform:translateX(-50%) translateY(-10px);
+  background:rgba(8,18,38,.98);backdrop-filter:blur(24px);
+  border:1px solid rgba(200,168,75,.18);border-top:2px solid var(--gold);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s;
+  z-index:3000;min-width:320px;
+}
+.has-drop:hover .mega-drop{opacity:1;visibility:visible;pointer-events:all;transform:translateX(-50%) translateY(0)}
+
+.mega-header{padding:18px 22px 14px;border-bottom:1px solid rgba(255,255,255,.07)}
+.mega-title{font-family:var(--fu);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.mega-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;line-height:1.5}
+
+.mega-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:12px}
+.mega-item{
+  display:flex;align-items:flex-start;gap:12px;padding:14px 16px;
+  text-decoration:none;cursor:pointer;border:1px solid transparent;
+  transition:all .22s;border-radius:2px;
+}
+.mega-item:hover{background:rgba(200,168,75,.07);border-color:rgba(200,168,75,.2)}
+.mega-icon{font-size:22px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:8px}
+.vi-gold{background:rgba(200,168,75,.12)}
+.vi-teal{background:rgba(0,180,198,.12)}
+.vi-royal{background:rgba(19,71,160,.15)}
+.vi-purple{background:rgba(138,111,212,.12)}
+.mega-item-title{font-family:var(--fu);font-size:12px;font-weight:600;color:rgba(255,255,255,.9);margin-bottom:4px;line-height:1.3}
+.mega-item-desc{font-size:11px;color:rgba(255,255,255,.45);line-height:1.5}
+.mega-footer{padding:12px 22px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between}
+.mega-see-all{font-family:var(--fu);font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--gold);text-decoration:none;cursor:pointer;transition:opacity .2s}
+.mega-see-all:hover{opacity:.7}
+
+/* Services mega-drop */
+.services-drop{min-width:min(960px,95vw);left:auto;right:0;transform:translateY(-10px)}
+.has-drop:hover .services-drop{transform:translateY(0)}
+.svc-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.svc-col{padding:16px 18px;border-right:1px solid rgba(255,255,255,.06)}
+.svc-col:last-child{border-right:none}
+.svc-col-label{font-family:var(--fu);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding:6px 0 12px;border-bottom:1px solid rgba(200,168,75,.15);margin-bottom:8px}
+.svc-item{
+  display:flex;align-items:flex-start;gap:10px;padding:10px 8px;
+  text-decoration:none;cursor:pointer;border-left:2px solid transparent;
+  transition:all .2s;margin-bottom:2px;
+}
+.svc-item:hover{border-left-color:var(--teal);background:rgba(0,180,198,.05);padding-left:12px}
+.svc-icon{font-size:18px;width:28px;text-align:center;flex-shrink:0;margin-top:1px}
+.svc-item-title{font-family:var(--fu);font-size:12px;font-weight:600;color:rgba(255,255,255,.88);margin-bottom:3px;line-height:1.3}
+.svc-item-desc{font-size:11px;color:rgba(255,255,255,.4);line-height:1.45}
+.svc-cta-card{margin-top:10px;padding:16px;background:rgba(200,168,75,.08);border:1px solid rgba(200,168,75,.2)}
+.svc-cta-title{font-family:var(--fu);font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px}
+.svc-cta-body{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:12px}
+.svc-cta-btn{display:inline-block;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:linear-gradient(135deg,var(--gold2),var(--gold));padding:8px 18px;text-decoration:none;cursor:pointer;transition:opacity .2s}
+.svc-cta-btn:hover{opacity:.85}
+.svc-footer-pills{display:flex;flex-wrap:wrap;gap:10px}
+.svc-footer-pills span{font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(255,255,255,.45);padding:5px 12px;border:1px solid rgba(255,255,255,.1)}
+
+/* ── MOBILE MENU ────────────────────────── */
+#mmenu{
+  display:none;position:fixed;top:74px;left:0;right:0;bottom:0;
+  background:rgba(8,18,38,.99);z-index:1999;overflow-y:auto;
+  transform:translateX(-100%);transition:transform .35s var(--ease);
+}
+#mmenu.open{display:block;transform:translateX(0)}
+.mm-inner{padding:0 0 40px}
+.mm-section{border-bottom:1px solid rgba(255,255,255,.06);padding:18px 24px}
+.mm-section-label{font-family:var(--fu);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.mm-link{
+  display:flex;align-items:center;gap:10px;padding:12px 0;font-family:var(--fu);
+  font-size:13px;font-weight:500;color:rgba(255,255,255,.8);text-decoration:none;
+  cursor:pointer;border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .2s,padding-left .2s;
+}
+.mm-link:last-child{border-bottom:none}
+.mm-link:hover{color:var(--gold);padding-left:8px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all .35s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* Verticals page */
+#page-verticals .v-grid{grid-template-columns:repeat(2,1fr)}
+
+/* ── RESPONSIVE ────────────────────────── */
+@media(max-width:1100px){
+  nav{padding:0 24px}
+  .services-drop{min-width:min(700px,95vw)}
+  .svc-columns{grid-template-columns:1fr 1fr}
+  .svc-col:nth-child(3){grid-column:1/-1;border-right:none;border-top:1px solid rgba(255,255,255,.06)}
+}
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links,.nav-cta{display:none!important}
+  .hamburger{display:flex}
+  .mega-drop,.services-drop{display:none!important}
+}
+@media(max-width:600px){
+  .hero{padding:90px 20px 70px}
+  .hero h1{font-size:clamp(38px,10vw,58px)}
+  .verticals,.services-sec,.global-svc,.partners,.stats-sec,.presence,.hcta,
+  .page-hero,.mission-sec,.experts-sec,.certs-sec,.naps-band,.vendors-sec,
+  .mastery-hero,.m-capstone,.m-final,.contact-body,.offices-sec,footer{padding-left:20px;padding-right:20px}
+  .v-grid,#page-verticals .v-grid,.services-grid,.m-deg-grid,.m-case-grid,
+  .m-career-grid,.m-pill-grid,.m-skill-cols,.gs-grid,.stats-wrap,
+  .exp-grid,.off-grid,.cert-grid,.vals-grid,.frow{grid-template-columns:1fr!important}
+  .svc-columns{grid-template-columns:1fr!important}
+  .m-portfolio{padding:28px 20px}
+  .hero-panel{display:none}
+  .verticals-header{flex-direction:column;align-items:flex-start}
+  footer,.foot-inner{padding-left:20px;padding-right:20px}
+  .foot-inner,.foot-bottom{flex-direction:column;align-items:flex-start}
+}
+@media(min-width:901px) and (max-width:1200px){
+  .v-grid{grid-template-columns:1fr 1fr}
+  .gs-grid{grid-template-columns:repeat(3,1fr)!important}
+}
 </style>
 </head>
 <body>
 
 <!-- ═══ NAV ═══ -->
 <nav id="nav">
-  <a class="logo" onclick="go('home')">
-    <svg class="logo-svg" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="rBg" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#1A4AB0"/>
-      <stop offset="55%" stop-color="#0A1F6B"/>
-      <stop offset="100%" stop-color="#050D3A"/>
-    </radialGradient>
-    <linearGradient id="rGold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F5D84A"/>
-      <stop offset="45%" stop-color="#C8A030"/>
-      <stop offset="100%" stop-color="#8A6510"/>
-    </linearGradient>
-    <linearGradient id="rGold2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F5D84A"/>
-      <stop offset="100%" stop-color="#C8A030"/>
-    </linearGradient>
-  </defs>
-  <!-- Dark navy square background -->
-  <rect width="56" height="56" fill="url(#rBg)"/>
-  <!-- Gold border frame -->
-  <rect x="2" y="2" width="52" height="52" fill="none" stroke="url(#rGold)" stroke-width="1.5"/>
-  <!-- BIG R letter -->
-  <path d="M10 10 L10 46 L16 46 L16 32 L24 32 L32 46 L39 46 L30 31 C34 29 37 25 37 20 C37 14 32 10 25 10 Z M16 16 L24 16 C28 16 31 18 31 21 C31 24 28 26 24 26 L16 26 Z" fill="url(#rGold)"/>
-  <!-- Network globe nodes - dots -->
-  <circle cx="44" cy="12" r="2.5" fill="url(#rGold2)" opacity=".9"/>
-  <circle cx="50" cy="20" r="2" fill="url(#rGold2)" opacity=".8"/>
-  <circle cx="48" cy="30" r="2" fill="url(#rGold2)" opacity=".8"/>
-  <circle cx="44" cy="38" r="2.5" fill="url(#rGold2)" opacity=".9"/>
-  <circle cx="50" cy="10" r="1.5" fill="url(#rGold2)" opacity=".6"/>
-  <!-- Network lines connecting dots -->
-  <line x1="44" y1="12" x2="50" y2="20" stroke="url(#rGold2)" stroke-width=".8" stroke-opacity=".5"/>
-  <line x1="50" y1="20" x2="48" y2="30" stroke="url(#rGold2)" stroke-width=".8" stroke-opacity=".5"/>
-  <line x1="48" y1="30" x2="44" y2="38" stroke="url(#rGold2)" stroke-width=".8" stroke-opacity=".5"/>
-  <line x1="44" y1="12" x2="48" y2="30" stroke="url(#rGold2)" stroke-width=".6" stroke-opacity=".3"/>
-  <!-- Bottom gold line accent -->
-  <line x1="2" y1="50" x2="54" y2="50" stroke="url(#rGold)" stroke-width="2"/>
-</svg>
-    <div class="logo-text">
-      <span class="logo-rgc">RGC <span style="color:var(--gold)">Global Pathway</span></span><span class="logo-sub">Raty's Global Consortium · A Global Path To Solutions</span>
-    </div>
+
+  <!-- Logo -->
+  <a class="logo" onclick="go('home')" style="cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:10px">
+    <svg viewBox="0 0 680 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:110px;height:46px;flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(200,168,75,.35));transition:transform .4s">
+      <defs>
+        <linearGradient id="nrFill" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1A4BAA"/><stop offset="55%" stop-color="#0D2E7A"/><stop offset="100%" stop-color="#071850"/></linearGradient>
+        <linearGradient id="nrGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F5D84A"/><stop offset="45%" stop-color="#C8A030"/><stop offset="100%" stop-color="#8A6010"/></linearGradient>
+        <radialGradient id="nGlobe" cx="40%" cy="35%" r="55%"><stop offset="0%" stop-color="#2A6BC4"/><stop offset="55%" stop-color="#0D2E7A"/><stop offset="100%" stop-color="#040E3A"/></radialGradient>
+        <linearGradient id="nGG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F5E070"/><stop offset="40%" stop-color="#D4A832"/><stop offset="100%" stop-color="#8A6010"/></linearGradient>
+        <linearGradient id="nRT" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#2050A8"/><stop offset="100%" stop-color="#0A1E60"/></linearGradient>
+        <linearGradient id="nGT" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#F5D84A"/><stop offset="50%" stop-color="#C8A030"/><stop offset="100%" stop-color="#8A6010"/></linearGradient>
+      </defs>
+      <path d="M24 18 L24 258 L66 258 L66 168 L102 168 L154 258 L204 258 L148 164 C172 153 188 131 188 105 C188 58 156 18 110 18 Z M66 26 L108 26 C140 26 156 46 156 70 C156 94 140 112 108 112 L66 112 Z" fill="url(#nrGold)"/>
+      <path d="M18 12 L18 252 L60 252 L60 162 L96 162 L148 252 L198 252 L142 158 C166 148 182 126 182 100 C182 54 150 12 106 12 Z M60 22 L104 22 C136 22 150 42 150 66 C150 90 136 108 104 108 L60 108 Z" fill="url(#nrFill)"/>
+      <circle cx="112" cy="150" r="72" fill="url(#nGlobe)" stroke="url(#nGG)" stroke-width="1.5"/>
+      <g fill="none" stroke="rgba(200,160,40,0.3)" stroke-width="0.8"><ellipse cx="112" cy="150" rx="72" ry="20"/><ellipse cx="112" cy="150" rx="22" ry="72"/><ellipse cx="112" cy="150" rx="44" ry="72"/><line x1="112" y1="78" x2="112" y2="222"/></g>
+      <circle cx="112" cy="150" r="72" fill="none" stroke="url(#nGG)" stroke-width="1.8"/>
+      <g fill="none" stroke="url(#nGG)" stroke-width="1.6"><ellipse cx="112" cy="150" rx="72" ry="28" transform="rotate(-35,112,150)"/><ellipse cx="112" cy="150" rx="72" ry="28" transform="rotate(35,112,150)"/></g>
+      <g fill="url(#nGG)"><circle cx="112" cy="78" r="5"/><circle cx="112" cy="222" r="5"/><circle cx="40" cy="150" r="5"/><circle cx="184" cy="150" r="5"/><circle cx="155" cy="102" r="4"/><circle cx="69" cy="102" r="4"/><circle cx="155" cy="198" r="4"/><circle cx="69" cy="198" r="4"/><circle cx="170" cy="130" r="3.5"/><circle cx="54" cy="130" r="3.5"/><circle cx="170" cy="172" r="3.5"/><circle cx="54" cy="172" r="3.5"/></g>
+      <g fill="none" stroke="url(#nGG)" stroke-width="0.9" stroke-opacity="0.55"><line x1="112" y1="78" x2="155" y2="102"/><line x1="112" y1="78" x2="69" y2="102"/><line x1="155" y1="102" x2="184" y2="150"/><line x1="69" y1="102" x2="40" y2="150"/><line x1="184" y1="150" x2="155" y2="198"/><line x1="40" y1="150" x2="69" y2="198"/><line x1="155" y1="198" x2="112" y2="222"/><line x1="69" y1="198" x2="112" y2="222"/><line x1="112" y1="78" x2="170" y2="130"/><line x1="112" y1="78" x2="54" y2="130"/><line x1="170" y1="130" x2="170" y2="172"/><line x1="54" y1="130" x2="54" y2="172"/><line x1="170" y1="172" x2="112" y2="222"/><line x1="54" y1="172" x2="112" y2="222"/></g>
+      <g fill="url(#nGG)"><circle cx="112" cy="141" r="13"/><path d="M104 151 L108 168 L116 168 L120 151 Z"/></g>
+      <circle cx="112" cy="141" r="8" fill="url(#nrFill)"/>
+      <text x="228" y="178" font-family="Georgia,serif" font-size="168" font-weight="700" fill="url(#nRT)" letter-spacing="-4">R</text>
+      <text x="330" y="178" font-family="Georgia,serif" font-size="168" font-weight="700" fill="url(#nGT)" letter-spacing="-4">G</text>
+      <text x="464" y="178" font-family="Georgia,serif" font-size="168" font-weight="700" fill="url(#nRT)" letter-spacing="-4">C</text>
+      <text x="236" y="207" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="#0D2E7A" letter-spacing="1.5">RATY&#39;S GLOBAL CONSORTIUM</text>
+      <text x="236" y="232" font-family="Arial,sans-serif" font-size="17" fill="#7A8AAA" letter-spacing="2.5">A GLOBAL PATH TO SOLUTIONS</text>
+    </svg>
   </a>
 
-  <ul class="nav-links">
-    <li><a onclick="showPage('home')" class="active">Home</a></li>
-    <li>
-      <a>Business Verticals <span class="nav-arrow">▾</span></a>
-      <div class="dropdown">
-        <a onclick="showPage('home')"><span class="dropdown-icon">🌐</span>RGC's Global Pathway</a>
-        <a onclick="showPage('home')"><span class="dropdown-icon">🎓</span>RGC Institute of Product Management</a>
-        <a onclick="showPage('home')"><span class="dropdown-icon">👥</span>RGC Workforce Solutions</a>
-        <a onclick="showPage('home')"><span class="dropdown-icon">📊</span>RGC Business Consultancy &amp; Project Management</a>
+  <!-- Desktop nav -->
+  <ul class="nav-links" id="navLinks">
+
+    <li><a onclick="go('home')" id="nl-home">Home</a></li>
+
+    <!-- Business Verticals dropdown -->
+    <li class="has-drop">
+      <a class="drop-toggle" id="nl-verticals">Business Verticals <span class="nav-arr">▾</span></a>
+      <div class="mega-drop verticals-drop">
+        <div class="mega-header">
+          <div class="mega-title">Our Business Verticals</div>
+          <div class="mega-sub">Four strategic pillars driving global education, talent and business transformation</div>
+        </div>
+        <div class="mega-grid">
+          <a class="mega-item" onclick="go('verticals')">
+            <span class="mega-icon vi-gold">🌐</span>
+            <div class="mega-item-body">
+              <div class="mega-item-title">RGC's Global Pathway</div>
+              <div class="mega-item-desc">TalentBridge · SkillLab · TalentOS — integrated student development ecosystem</div>
+            </div>
+          </a>
+          <a class="mega-item" onclick="go('mastery')">
+            <span class="mega-icon vi-teal">🎓</span>
+            <div class="mega-item-body">
+              <div class="mega-item-title">RGC Institute of Product Management</div>
+              <div class="mega-item-desc">Learn · Build · Launch — PM &amp; AI PM mastery for the global economy</div>
+            </div>
+          </a>
+          <a class="mega-item" onclick="go('verticals')">
+            <span class="mega-icon vi-royal">👥</span>
+            <div class="mega-item-body">
+              <div class="mega-item-title">RGC Workforce Solutions</div>
+              <div class="mega-item-desc">Domestic &amp; International talent placement and workforce pipeline</div>
+            </div>
+          </a>
+          <a class="mega-item" onclick="go('verticals')">
+            <span class="mega-icon vi-purple">📊</span>
+            <div class="mega-item-body">
+              <div class="mega-item-title">RGC Business Consultancy &amp; Project Management</div>
+              <div class="mega-item-desc">Strategy · Execution · Sustainable Growth for global organisations</div>
+            </div>
+          </a>
+        </div>
+        <div class="mega-footer">
+          <a onclick="go('verticals')" class="mega-see-all">Explore All Verticals →</a>
+        </div>
       </div>
     </li>
-    <li>
-      <a>Our Services <span class="nav-arrow">▾</span></a>
-      <div class="dropdown">
-        <a onclick="showPage('contact')"><span class="dropdown-icon">🤝</span>Domestic &amp; International Placement</a>
-        <a onclick="showPage('home')"><span class="dropdown-icon">📚</span>Skill Training &amp; Development</a>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">✈️</span>Overseas Education Support</a>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">📝</span>Proficiency Examination — IELTS, TESOL, TEFL</a>
-        <div class="dropdown-divider"></div>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">🏥</span>Dubai Health Authority (DHA) Exam</a>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">🩺</span>SMLE for Nursing Professionals</a>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">🧭</span>Career Guidance</a>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">🎒</span>Student Project Support</a>
-        <div class="dropdown-divider"></div>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">🚀</span>Startup Business Support — 0 to 1</a>
-        <a onclick="showPage('contact')"><span class="dropdown-icon">💼</span>Business Consulting</a>
+
+    <!-- Our Services dropdown -->
+    <li class="has-drop">
+      <a class="drop-toggle" id="nl-services">Our Services <span class="nav-arr">▾</span></a>
+      <div class="mega-drop services-drop">
+        <div class="mega-header">
+          <div class="mega-title">Our Services Portfolio</div>
+          <div class="mega-sub">Connecting Talent · Creating Opportunities · Building a Global Future</div>
+        </div>
+
+        <div class="svc-columns">
+
+          <!-- Column 1: Education & Placement -->
+          <div class="svc-col">
+            <div class="svc-col-label">Education &amp; Placement</div>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">🤝</span>
+              <div>
+                <div class="svc-item-title">Domestic &amp; International Placement</div>
+                <div class="svc-item-desc">Internship &amp; employment placement support across India, UAE &amp; KSA</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">✈️</span>
+              <div>
+                <div class="svc-item-title">Overseas Education Support</div>
+                <div class="svc-item-desc">University admissions guidance, application &amp; visa assistance globally</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">🧭</span>
+              <div>
+                <div class="svc-item-title">Career Guidance</div>
+                <div class="svc-item-desc">Personalised career mapping, aptitude &amp; professional direction</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">🎒</span>
+              <div>
+                <div class="svc-item-title">Student Project Support</div>
+                <div class="svc-item-desc">Academic project mentorship, research &amp; delivery assistance</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 2: Skills & Training -->
+          <div class="svc-col">
+            <div class="svc-col-label">Skills &amp; Training</div>
+            <a class="svc-item" onclick="go('home')">
+              <span class="svc-icon">📚</span>
+              <div>
+                <div class="svc-item-title">Skill Training &amp; Development</div>
+                <div class="svc-item-desc">360+ modules — Soft Skills, Technical, Corporate &amp; Rehabilitation training</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">📝</span>
+              <div>
+                <div class="svc-item-title">Proficiency Examination</div>
+                <div class="svc-item-desc">IELTS · TESOL · TEFL preparation, coaching &amp; examination support</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">🏥</span>
+              <div>
+                <div class="svc-item-title">Dubai Health Authority (DHA) Exam</div>
+                <div class="svc-item-desc">Licensing examination preparation for healthcare professionals entering UAE</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">🩺</span>
+              <div>
+                <div class="svc-item-title">SMLE for Nursing Professionals</div>
+                <div class="svc-item-desc">Saudi Medical Licensing Examination coaching &amp; preparation support</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Column 3: Business & Growth -->
+          <div class="svc-col">
+            <div class="svc-col-label">Business &amp; Growth</div>
+            <a class="svc-item" onclick="go('mastery')">
+              <span class="svc-icon">🎓</span>
+              <div>
+                <div class="svc-item-title">RGC Mastery Programme</div>
+                <div class="svc-item-desc">Product Management &amp; AI Product Management — global career mastery</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">🚀</span>
+              <div>
+                <div class="svc-item-title">Startup Business Support — 0 to 1</div>
+                <div class="svc-item-desc">Idea validation, business model design, GTM strategy &amp; launch support</div>
+              </div>
+            </a>
+            <a class="svc-item" onclick="go('contact')">
+              <span class="svc-icon">💼</span>
+              <div>
+                <div class="svc-item-title">Business Consulting</div>
+                <div class="svc-item-desc">Strategic advisory, project management &amp; sustainable growth execution</div>
+              </div>
+            </a>
+            <!-- CTA card -->
+            <div class="svc-cta-card">
+              <div class="svc-cta-title">Ready to get started?</div>
+              <div class="svc-cta-body">Our team is present across India, UAE &amp; Kingdom of Saudi Arabia</div>
+              <a onclick="go('contact')" class="svc-cta-btn">Contact Us →</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mega-footer">
+          <div class="svc-footer-pills">
+            <span>🌐 India</span>
+            <span>🇦🇪 United Arab Emirates</span>
+            <span>🇸🇦 Kingdom of Saudi Arabia</span>
+            <span>Since 2019</span>
+          </div>
+        </div>
       </div>
     </li>
-    <li><a onclick="showPage('about')">About</a></li>
-    <li><a onclick="showPage('mastery')">RGC Mastery</a></li>
-    <li><a onclick="showPage('contact')">Contact</a></li>
+
+    <li><a onclick="go('about')" id="nl-about">About</a></li>
+    <li><a onclick="go('mastery')" id="nl-mastery">RGC Mastery</a></li>
+    <li><a onclick="go('contact')" id="nl-contact">Contact</a></li>
+
   </ul>
-  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+
+  <!-- Hamburger -->
+  <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
   <a onclick="go('contact')" class="nav-cta">Partner With Us</a>
 </nav>
 
-<!-- Mobile menu -->
-<div id="mmenu" style="display:none;position:fixed;top:74px;left:0;right:0;background:rgba(10,22,40,.98);z-index:1999;padding:20px 24px;border-top:1px solid rgba(200,168,75,.15)">
-  <ul style="list-style:none;display:flex;flex-direction:column;gap:0">
-    <li><a onclick="go('home');toggleMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);cursor:pointer">Home</a></li>
-    <li><a onclick="go('mastery');toggleMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);cursor:pointer">RGC Mastery</a></li>
-    <li><a onclick="go('about');toggleMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);cursor:pointer">About</a></li>
-    <li><a onclick="go('contact');toggleMenu()" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);text-decoration:none;display:block;padding:14px 0;cursor:pointer">Contact</a></li>
-  </ul>
+<!-- ═══ MOBILE MENU ═══ -->
+<div id="mmenu" aria-hidden="true">
+  <div class="mm-inner">
+
+    <div class="mm-section">
+      <div class="mm-section-label">Navigate</div>
+      <a class="mm-link" onclick="go('home');closeMobile()">🏠 Home</a>
+      <a class="mm-link" onclick="go('about');closeMobile()">ℹ️ About</a>
+      <a class="mm-link" onclick="go('mastery');closeMobile()">🎓 RGC Mastery</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">📬 Contact</a>
+    </div>
+
+    <div class="mm-section">
+      <div class="mm-section-label">Business Verticals</div>
+      <a class="mm-link" onclick="go('verticals');closeMobile()">🌐 RGC's Global Pathway</a>
+      <a class="mm-link" onclick="go('mastery');closeMobile()">🎓 RGC Institute of Product Management</a>
+      <a class="mm-link" onclick="go('verticals');closeMobile()">👥 RGC Workforce Solutions</a>
+      <a class="mm-link" onclick="go('verticals');closeMobile()">📊 RGC Business Consultancy</a>
+    </div>
+
+    <div class="mm-section">
+      <div class="mm-section-label">Our Services</div>
+      <a class="mm-link" onclick="go('contact');closeMobile()">🤝 Domestic &amp; International Placement</a>
+      <a class="mm-link" onclick="go('home');closeMobile()">📚 Skill Training &amp; Development</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">✈️ Overseas Education Support</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">📝 Proficiency Exam (IELTS · TESOL · TEFL)</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">🏥 DHA Exam Support</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">🩺 SMLE for Nursing Professionals</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">🧭 Career Guidance</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">🎒 Student Project Support</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">🚀 Startup Business Support</a>
+      <a class="mm-link" onclick="go('contact');closeMobile()">💼 Business Consulting</a>
+    </div>
+
+    <div style="padding:20px 24px">
+      <a onclick="go('contact');closeMobile()" style="display:block;text-align:center;padding:14px;background:linear-gradient(135deg,#F0C830,#C8A84B);color:#0A1628;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer">Partner With Us →</a>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════ HOME ═══════════ -->
@@ -1311,61 +1600,191 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-// PAGE NAVIGATION
-function go(name){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('page-'+name).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-  setTimeout(initReveal,120);
+// ── Page navigation ──────────────────────────────────────
+const PAGES = ['home','about','mastery','contact','verticals'];
+
+function go(name) {
+  // validate
+  if (!PAGES.includes(name)) name = 'home';
+  PAGES.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) el.classList.remove('active');
+  });
+  const target = document.getElementById('page-' + name);
+  if (target) target.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  // Update active nav link
+  document.querySelectorAll('.nav-links > li > a').forEach(a => a.classList.remove('active'));
+  const nl = document.getElementById('nl-' + name);
+  if (nl) nl.classList.add('active');
+
+  // Re-run reveal
+  setTimeout(initReveal, 80);
 }
 
-// NAV SCROLL
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('up',window.scrollY>60);
-  const bt=document.getElementById('backTop');
-  if(bt) bt.style.display=window.scrollY>400?'flex':'none';
+// Legacy alias
+function showPage(name) { go(name); }
+
+// ── Nav scroll tint ───────────────────────────────────────
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (nav) nav.classList.toggle('up', window.scrollY > 50);
+  const bt = document.getElementById('backTop');
+  if (bt) bt.style.display = window.scrollY > 400 ? 'flex' : 'none';
+}, {passive: true});
+
+// ── Mobile menu ───────────────────────────────────────────
+function toggleMobile() {
+  const mm  = document.getElementById('mmenu');
+  const hbg = document.getElementById('hamburger');
+  const open = mm.classList.toggle('open');
+  hbg.classList.toggle('open', open);
+  hbg.setAttribute('aria-expanded', open);
+  mm.setAttribute('aria-hidden', !open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+function closeMobile() {
+  const mm  = document.getElementById('mmenu');
+  const hbg = document.getElementById('hamburger');
+  mm.classList.remove('open');
+  hbg.classList.remove('open');
+  hbg.setAttribute('aria-expanded', 'false');
+  mm.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+function toggleMenu() { toggleMobile(); }
+
+// Close mobile on outside click
+document.addEventListener('click', e => {
+  const mm  = document.getElementById('mmenu');
+  const hbg = document.getElementById('hamburger');
+  if (mm && mm.classList.contains('open') && !mm.contains(e.target) && !hbg.contains(e.target)) {
+    closeMobile();
+  }
 });
 
-// MOBILE MENU
-function toggleMenu(){
-  const m=document.getElementById('mmenu');
-  m.style.display=m.style.display==='none'?'block':'none';
+// ── Scroll reveal ─────────────────────────────────────────
+function initReveal() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.rl,.rr,.rs').forEach(el => {
+    el.classList.remove('on');
+    obs.observe(el);
+  });
 }
 
-// SCROLL REVEAL
-function initReveal(){
-  const els=document.querySelectorAll('.reveal,.rl,.rr,.rs');
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}});
-  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(el=>{el.classList.remove('on');obs.observe(el)});
+// ── Formspree ─────────────────────────────────────────────
+const FORMSPREE_ID = "xgojoazb";
+const enquiryForm = document.getElementById("rgc-form");
+if (enquiryForm) {
+  enquiryForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById("submit-btn");
+    const errBox = document.getElementById("form-error");
+    const sucBox = document.getElementById("form-success");
+    btn.textContent = "Sending…"; btn.disabled = true; btn.style.opacity = ".7";
+    errBox.style.display = "none";
+    const data = {};
+    new FormData(enquiryForm).forEach((v, k) => { data[k] = v; });
+    try {
+      const res = await fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+        method:"POST", headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        enquiryForm.style.display = "none"; sucBox.style.display = "block"; enquiryForm.reset();
+      } else throw new Error();
+    } catch {
+      errBox.style.display = "block";
+      btn.textContent = "Send Message →"; btn.disabled = false; btn.style.opacity = "1";
+    }
+  });
+}
+function resetForm() {
+  const f = document.getElementById("rgc-form");
+  const s = document.getElementById("form-success");
+  const b = document.getElementById("submit-btn");
+  if (f) f.style.display = "block";
+  if (s) s.style.display = "none";
+  if (b) { b.textContent = "Send Message →"; b.disabled = false; b.style.opacity = "1"; }
 }
 
-// FORMSPREE
-const FID="xgojoazb";
-document.getElementById('rgc-form').addEventListener('submit',async function(e){
-  e.preventDefault();
-  const btn=document.getElementById('submit-btn');
-  const err=document.getElementById('form-error');
-  const suc=document.getElementById('form-success');
-  btn.textContent='Sending...';btn.disabled=true;btn.style.opacity='.7';err.style.display='none';
-  const data={};
-  new FormData(e.target).forEach((v,k)=>{data[k]=v});
-  try{
-    const r=await fetch('https://formspree.io/f/'+FID,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});
-    if(r.ok){e.target.style.display='none';suc.style.display='block';e.target.reset();}
-    else throw new Error();
-  }catch{err.style.display='block';btn.textContent='Send Message →';btn.disabled=false;btn.style.opacity='1'}
+// ── Init ──────────────────────────────────────────────────
+window.addEventListener('load', () => {
+  initReveal();
+  if (window.scrollY > 50) document.getElementById('nav')?.classList.add('up');
 });
-function resetForm(){
-  document.getElementById('form-success').style.display='none';
-  document.getElementById('rgc-form').style.display='block';
-  const btn=document.getElementById('submit-btn');
-  btn.textContent='Send Message →';btn.disabled=false;btn.style.opacity='1';
-}
-
-// INIT
-window.addEventListener('load',()=>{initReveal();if(window.scrollY>60)document.getElementById('nav').classList.add('up')});
 </script>
+
+
+<!-- ═══════════ VERTICALS PAGE ═══════════ -->
+<div id="page-verticals" class="page">
+
+<section class="page-hero" style="min-height:44vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:120px 56px 70px;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=80') center/cover no-repeat">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,40,.95),rgba(15,45,107,.9))"></div>
+  <div style="position:relative;z-index:1;max-width:1200px;width:100%;margin:0 auto">
+    <div class="sec-eye" style="color:var(--teal);margin-bottom:16px">Our Business Architecture</div>
+    <h1 style="font-family:var(--fd);font-size:clamp(44px,5.5vw,78px);font-weight:300;color:var(--white);line-height:1.04">Business<br><strong style="font-weight:600;color:var(--gold)">Verticals</strong></h1>
+    <p style="margin-top:16px;font-size:16px;color:rgba(255,255,255,.6);max-width:560px;line-height:1.8">Four strategic pillars — each engineered to serve a distinct dimension of global education, talent, and business transformation.</p>
+  </div>
+</section>
+
+<section class="verticals" style="background:var(--white)">
+  <div class="verticals-inner">
+    <div class="v-grid" style="grid-template-columns:repeat(2,1fr)">
+      <div class="v-card c1 reveal d1">
+        <div class="v-num">01</div><span class="v-icon">🌐</span>
+        <div class="v-title">RGC's Global Pathway</div>
+        <p class="v-sub">An international education and talent-development consortium partnering with higher-education institutions to strengthen student employability, talent visibility, and placement readiness in a competitive global environment. Powered by our integrated TalentBridge · SkillLab · TalentOS ecosystem.</p>
+        <div class="v-tags"><span class="v-tag" style="color:var(--gold);border-color:rgba(200,168,75,.35)">TalentBridge</span><span class="v-tag" style="color:var(--gold);border-color:rgba(200,168,75,.35)">Skill Lab</span><span class="v-tag" style="color:var(--gold);border-color:rgba(200,168,75,.35)">Talent OS</span></div>
+        <a onclick="go('home')" style="display:inline-block;margin-top:20px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-decoration:none;cursor:pointer">Learn More →</a>
+      </div>
+      <div class="v-card c2 reveal d2">
+        <div class="v-num">02</div><span class="v-icon">🎓</span>
+        <div class="v-title">RGC Institute of Product Management</div>
+        <p class="v-sub">Our flagship mastery programme equipping learners with globally relevant Product Management and AI Product Management capabilities. Designed for ambitious learners from every academic discipline who want to develop internationally recognised product-thinking expertise for the AI-driven global economy.</p>
+        <div class="v-tags"><span class="v-tag" style="color:var(--teal);border-color:rgba(0,180,198,.35)">Learn</span><span class="v-tag" style="color:var(--teal);border-color:rgba(0,180,198,.35)">Build</span><span class="v-tag" style="color:var(--teal);border-color:rgba(0,180,198,.35)">Launch</span></div>
+        <a onclick="go('mastery')" style="display:inline-block;margin-top:20px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);text-decoration:none;cursor:pointer">Explore Mastery →</a>
+      </div>
+      <div class="v-card c3 reveal d3">
+        <div class="v-num">03</div><span class="v-icon">👥</span>
+        <div class="v-title">RGC Workforce Solutions</div>
+        <p class="v-sub">Bridging skilled talent with global employers — connecting placement-ready graduates with domestic and international workforce demand across India, United Arab Emirates, and Kingdom of Saudi Arabia. Our employer-aligned talent pipeline ensures smooth campus-to-career transitions and sustainable workforce outcomes.</p>
+        <div class="v-tags"><span class="v-tag" style="color:var(--royal);border-color:rgba(19,71,160,.35)">Domestic</span><span class="v-tag" style="color:var(--royal);border-color:rgba(19,71,160,.35)">International</span></div>
+        <a onclick="go('contact')" style="display:inline-block;margin-top:20px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--royal);text-decoration:none;cursor:pointer">Partner With Us →</a>
+      </div>
+      <div class="v-card c4 reveal d4">
+        <div class="v-num">04</div><span class="v-icon">📊</span>
+        <div class="v-title">RGC Business Consultancy &amp; Project Management</div>
+        <p class="v-sub">Strategic business advisory and project delivery services — helping organisations ideate, plan, execute, and sustain growth in competitive global markets. From startup formation to enterprise transformation, we deliver measurable outcomes through structured strategy, disciplined execution and continuous performance management.</p>
+        <div class="v-tags"><span class="v-tag" style="color:#8A6FD4;border-color:rgba(138,111,212,.35)">Strategy</span><span class="v-tag" style="color:#8A6FD4;border-color:rgba(138,111,212,.35)">Execution</span><span class="v-tag" style="color:#8A6FD4;border-color:rgba(138,111,212,.35)">Sustainable Growth</span></div>
+        <a onclick="go('contact')" style="display:inline-block;margin-top:20px;font-family:var(--fu);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8A6FD4;text-decoration:none;cursor:pointer">Engage With Us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px 56px;background:var(--navy);text-align:center">
+  <div style="max-width:700px;margin:0 auto">
+    <div class="sec-eye" style="justify-content:center;margin-bottom:16px">Global Path To Solutions</div>
+    <h2 style="font-family:var(--fd);font-size:clamp(34px,4vw,52px);font-weight:300;color:var(--white);margin-bottom:16px">Education · Employment · Skills · Business · <strong style="color:var(--gold)">Global Growth</strong></h2>
+    <p style="font-size:15px;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:36px">Raty's Global Consortium — connecting talent, creating opportunities, building a global future since 2019.</p>
+    <a onclick="go('contact')" style="display:inline-block;font-family:var(--fu);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:15px 36px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--navy);text-decoration:none;cursor:pointer">Partner With Us →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div><div class="foot-brand">RGC Global Pathway</div><div class="foot-tag">Powered by Raty's Global Consortium Pvt. Ltd.</div></div>
+    <ul class="foot-links"><li><a onclick="go('home')">Home</a></li><li><a onclick="go('about')">About</a></li><li><a onclick="go('mastery')">RGC Mastery</a></li><li><a onclick="go('verticals')">Verticals</a></li><li><a onclick="go('contact')">Contact</a></li></ul>
+    <div class="foot-copy">© 2026 RGC Global Pathway · Powered by Raty's Global Consortium Pvt. Ltd.</div>
+  </div>
+</footer>
+</div>
+
 </body>
 </html>
