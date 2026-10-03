@@ -278,12 +278,15 @@ nav.up{background:rgba(10,22,40,.97);backdrop-filter:blur(20px);border-bottom-co
 .pres-left h2{font-family:var(--fd);font-size:clamp(38px,4vw,54px);font-weight:300;color:var(--white);line-height:1.08;margin-bottom:16px}
 .pres-left h2 strong{font-weight:600;color:var(--gold)}
 .pres-left p{font-size:14px;color:rgba(255,255,255,.5)}
-.pres-locs{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pres-locs{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .ploc{border-left:2px solid rgba(200,168,75,.35);padding-left:20px;transition:all .35s;cursor:default}
 .ploc:hover{border-left-color:var(--gold)}
 .ploc-flag{font-size:26px;margin-bottom:10px}
 .ploc-country{font-family:var(--fu);font-size:13px;font-weight:700;color:var(--white);margin-bottom:6px}
 .ploc-cities{font-size:12px;line-height:1.8;color:rgba(255,255,255,.5)}
+.ploc-phone{font-size:12px;margin-top:8px;line-height:1.8}
+.ploc-phone a{color:rgba(200,168,75,.8);text-decoration:none;transition:color .2s}
+.ploc-phone a:hover{color:var(--gold)}
 
 /* HOME CTA */
 .hcta{padding:110px 56px;text-align:center;position:relative;overflow:hidden;background:url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=80&fit=crop') center/cover no-repeat}
@@ -390,7 +393,9 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
 .offices-sec{padding:80px 56px;background:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1800&q=80&fit=crop') center/cover no-repeat;position:relative}
 .offices-sec::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.97)}
 .off-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
-.off-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:50px}
+.off-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:50px}
+.off-card a{color:var(--muted);text-decoration:none;transition:color .2s}
+.off-card a:hover{color:var(--teal)}
 .off-card{padding:38px 34px;border:1px solid rgba(10,22,40,.08);transition:all .35s;cursor:default;background:var(--white)}
 .off-card:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 16px 48px rgba(10,22,40,.08)}
 .off-flag{font-size:28px;margin-bottom:14px}
@@ -560,8 +565,19 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
 .mega-see-all:hover{opacity:.7}
 
 /* Services mega-drop */
-.services-drop{min-width:min(960px,95vw);left:auto;right:0;transform:translateY(-10px)}
-.has-drop:hover .services-drop{transform:translateY(0)}
+.services-drop{
+  min-width:min(880px,90vw);
+  left:50%;right:auto;
+  transform:translateX(-50%) translateY(-10px);
+}
+.has-drop:hover .services-drop{transform:translateX(-50%) translateY(0)}
+@media(max-width:1200px){
+  .services-drop{
+    left:auto;right:-20px;
+    transform:translateX(0) translateY(-10px);
+  }
+  .has-drop:hover .services-drop{transform:translateX(0) translateY(0)}
+}
 .svc-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .svc-col{padding:16px 18px;border-right:1px solid rgba(255,255,255,.06)}
 .svc-col:last-child{border-right:none}
@@ -623,6 +639,10 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
   .hamburger{display:flex}
   .mega-drop,.services-drop{display:none!important}
 }
+@media(max-width:768px){
+  .off-grid{grid-template-columns:repeat(2,1fr)!important}
+  .pres-locs{grid-template-columns:repeat(2,1fr)!important}
+}
 @media(max-width:600px){
   .hero{padding:90px 20px 70px}
   .hero h1{font-size:clamp(38px,10vw,58px)}
@@ -631,7 +651,8 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
   .mastery-hero,.m-capstone,.m-final,.contact-body,.offices-sec,footer{padding-left:20px;padding-right:20px}
   .v-grid,#page-verticals .v-grid,.services-grid,.m-deg-grid,.m-case-grid,
   .m-career-grid,.m-pill-grid,.m-skill-cols,.gs-grid,.stats-wrap,
-  .exp-grid,.off-grid,.cert-grid,.vals-grid,.frow{grid-template-columns:1fr!important}
+  .exp-grid,.off-grid,.cert-grid,.vals-grid,.frow,
+  .pres-locs{grid-template-columns:1fr!important}
   .svc-columns{grid-template-columns:1fr!important}
   .m-portfolio{padding:28px 20px}
   .hero-panel{display:none}
@@ -722,8 +743,9 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
             </div>
           </a>
         </div>
-        <div class="mega-footer">
+        <div class="mega-footer" style="justify-content:space-between">
           <a onclick="go('verticals')" class="mega-see-all">Explore All Verticals →</a>
+          <a onclick="go('home')" class="mega-see-all" style="color:var(--teal)">Explore Our Services →</a>
         </div>
       </div>
     </li>
@@ -841,9 +863,10 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
 
         <div class="mega-footer">
           <div class="svc-footer-pills">
-            <span>🌐 India</span>
+            <span>🇮🇳 India</span>
             <span>🇦🇪 United Arab Emirates</span>
             <span>🇸🇦 Kingdom of Saudi Arabia</span>
+            <span>🇵🇭 Philippines</span>
             <span>Since 2019</span>
           </div>
         </div>
@@ -896,6 +919,14 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
       <a class="mm-link" onclick="go('contact');closeMobile()">🎒 Student Project Support</a>
       <a class="mm-link" onclick="go('contact');closeMobile()">🚀 Startup Business Support</a>
       <a class="mm-link" onclick="go('contact');closeMobile()">💼 Business Consulting</a>
+    </div>
+
+    <div class="mm-section">
+      <div class="mm-section-label">Global Presence</div>
+      <div class="mm-link" style="cursor:default;gap:14px">🇮🇳 <span><strong style="color:rgba(255,255,255,.9)">India</strong><br><span style="font-size:11px;color:rgba(255,255,255,.4)">+91 638 51 51 007 / 008</span></span></div>
+      <div class="mm-link" style="cursor:default;gap:14px">🇦🇪 <span><strong style="color:rgba(255,255,255,.9)">United Arab Emirates</strong><br><span style="font-size:11px;color:rgba(255,255,255,.4)">+971 52 292 3931</span></span></div>
+      <div class="mm-link" style="cursor:default;gap:14px">🇸🇦 <span><strong style="color:rgba(255,255,255,.9)">Kingdom of Saudi Arabia</strong><br><span style="font-size:11px;color:rgba(255,255,255,.4)">+966 56 983 2327</span></span></div>
+      <div class="mm-link" style="cursor:default;gap:14px">🇵🇭 <span><strong style="color:rgba(255,255,255,.9)">Philippines</strong><br><span style="font-size:11px;color:rgba(255,255,255,.4)">+63 947 233 0682</span></span></div>
     </div>
 
     <div style="padding:20px 24px">
@@ -1197,9 +1228,30 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
       <p>A growing presence across South Asia and the Middle East, with institutional partnerships in major education and employment hubs.</p>
     </div>
     <div class="pres-locs">
-      <div class="ploc reveal d1"><div class="ploc-flag">🇮🇳</div><div class="ploc-country">India</div><div class="ploc-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div></div>
-      <div class="ploc reveal d3"><div class="ploc-flag">🇦🇪</div><div class="ploc-country">United Arab Emirates</div><div class="ploc-cities">Abu Dhabi · Dubai · Sharjah</div></div>
-      <div class="ploc reveal d5"><div class="ploc-flag">🇸🇦</div><div class="ploc-country">Kingdom of Saudi Arabia</div><div class="ploc-cities">Jeddah · Riyadh</div></div>
+      <div class="ploc reveal d1">
+        <div class="ploc-flag">🇮🇳</div>
+        <div class="ploc-country">India</div>
+        <div class="ploc-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div>
+        <div class="ploc-phone"><a href="tel:+916385151007">+91 638 51 51 007</a><br><a href="tel:+919789411476">+91 97894 11476</a></div>
+      </div>
+      <div class="ploc reveal d2">
+        <div class="ploc-flag">🇦🇪</div>
+        <div class="ploc-country">United Arab Emirates</div>
+        <div class="ploc-cities">Abu Dhabi · Dubai · Sharjah</div>
+        <div class="ploc-phone"><a href="tel:+971522923931">+971 52 292 3931</a></div>
+      </div>
+      <div class="ploc reveal d3">
+        <div class="ploc-flag">🇸🇦</div>
+        <div class="ploc-country">Kingdom of Saudi Arabia</div>
+        <div class="ploc-cities">Jeddah · Riyadh</div>
+        <div class="ploc-phone"><a href="tel:+966569832327">+966 56 983 2327</a></div>
+      </div>
+      <div class="ploc reveal d4">
+        <div class="ploc-flag">🇵🇭</div>
+        <div class="ploc-country">Philippines</div>
+        <div class="ploc-cities">Manila</div>
+        <div class="ploc-phone"><a href="tel:+639472330682">+63 947 233 0682</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1339,9 +1391,30 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
       <p>A growing presence across South Asia and the Middle East.</p>
     </div>
     <div class="pres-locs">
-      <div class="ploc reveal d1"><div class="ploc-flag">🇮🇳</div><div class="ploc-country">India</div><div class="ploc-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div></div>
-      <div class="ploc reveal d3"><div class="ploc-flag">🇦🇪</div><div class="ploc-country">United Arab Emirates</div><div class="ploc-cities">Abu Dhabi · Dubai · Sharjah</div></div>
-      <div class="ploc reveal d5"><div class="ploc-flag">🇸🇦</div><div class="ploc-country">Kingdom of Saudi Arabia</div><div class="ploc-cities">Jeddah · Riyadh</div></div>
+      <div class="ploc reveal d1">
+        <div class="ploc-flag">🇮🇳</div>
+        <div class="ploc-country">India</div>
+        <div class="ploc-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div>
+        <div class="ploc-phone"><a href="tel:+916385151007">+91 638 51 51 007</a><br><a href="tel:+919789411476">+91 97894 11476</a></div>
+      </div>
+      <div class="ploc reveal d2">
+        <div class="ploc-flag">🇦🇪</div>
+        <div class="ploc-country">United Arab Emirates</div>
+        <div class="ploc-cities">Abu Dhabi · Dubai · Sharjah</div>
+        <div class="ploc-phone"><a href="tel:+971522923931">+971 52 292 3931</a></div>
+      </div>
+      <div class="ploc reveal d3">
+        <div class="ploc-flag">🇸🇦</div>
+        <div class="ploc-country">Kingdom of Saudi Arabia</div>
+        <div class="ploc-cities">Jeddah · Riyadh</div>
+        <div class="ploc-phone"><a href="tel:+966569832327">+966 56 983 2327</a></div>
+      </div>
+      <div class="ploc reveal d4">
+        <div class="ploc-flag">🇵🇭</div>
+        <div class="ploc-country">Philippines</div>
+        <div class="ploc-cities">Manila</div>
+        <div class="ploc-phone"><a href="tel:+639472330682">+63 947 233 0682</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1514,9 +1587,25 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
     <div class="rl">
       <h2 class="cinfo h2" style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,46px);font-weight:300;color:var(--navy);margin-bottom:36px">Reach<br><strong>Our Team.</strong></h2>
       <div class="cinfo-item"><div class="cinfo-label">Email</div><div class="cinfo-value"><a href="mailto:rgcglobalpathway@gmail.com">rgcglobalpathway@gmail.com</a></div></div>
-      <div class="cinfo-item"><div class="cinfo-label">India</div><div class="cinfo-value"><a href="tel:+916385151007">+91 638 51 51 007</a><br><a href="tel:+916385151008">+91 638 51 51 008</a></div></div>
-      <div class="cinfo-item"><div class="cinfo-label">United Arab Emirates</div><div class="cinfo-value"><a href="tel:+971522923931">+971 52 292 3931</a></div></div>
-      <div class="cinfo-item"><div class="cinfo-label">Kingdom of Saudi Arabia</div><div class="cinfo-value"><a href="tel:+966569832327">+966 56 983 2327</a></div></div>
+      <div class="cinfo-item">
+        <div class="cinfo-label">🇮🇳 India</div>
+        <div class="cinfo-value">
+          <a href="tel:+916385151007">+91 638 51 51 007</a><br>
+          <a href="tel:+919789411476">+91 97894 11476</a>
+        </div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-label">🇦🇪 United Arab Emirates</div>
+        <div class="cinfo-value"><a href="tel:+971522923931">+971 52 292 3931</a></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-label">🇸🇦 Kingdom of Saudi Arabia</div>
+        <div class="cinfo-value"><a href="tel:+966569832327">+966 56 983 2327</a></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cinfo-label">🇵🇭 Philippines</div>
+        <div class="cinfo-value"><a href="tel:+639472330682">+63 947 233 0682</a></div>
+      </div>
       <div class="cinfo-item"><div class="cinfo-label">Website</div><div class="cinfo-value"><a href="http://www.ratysglobalconsortium.com">www.ratysglobalconsortium.com</a></div></div>
       <div class="cinfo-item"><div class="cinfo-label">Training Modes</div><div class="cinfo-value">Online · On Campus · SkillLab · Requested Premises</div></div>
       <div class="cinfo-item"><div class="cinfo-label">Duration</div><div class="cinfo-value">21 Days to 6 Months, Depends on the Programme</div></div>
@@ -1574,10 +1663,49 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
 <section class="offices-sec">
   <div class="off-inner">
     <div class="reveal"><div class="sec-eye">Our Offices</div><h2 class="sec-title">Present Where <strong>You Need Us.</strong></h2></div>
-    <div class="off-grid">
-      <div class="off-card reveal d1"><div class="off-flag">🇮🇳</div><div class="off-country">India</div><div class="off-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div><div class="off-phones">+91 638 51 51 007<br>+91 638 51 51 008</div></div>
-      <div class="off-card reveal d3"><div class="off-flag">🇦🇪</div><div class="off-country">United Arab Emirates</div><div class="off-cities">Abu Dhabi · Dubai · Sharjah</div><div class="off-phones">+971 52 292 3931</div></div>
-      <div class="off-card reveal d5"><div class="off-flag">🇸🇦</div><div class="off-country">Kingdom of Saudi Arabia</div><div class="off-cities">Jeddah · Riyadh</div><div class="off-phones">+966 56 983 2327</div></div>
+    <div class="off-grid" style="grid-template-columns:repeat(4,1fr)">
+
+      <!-- India -->
+      <div class="off-card reveal d1">
+        <div class="off-flag">🇮🇳</div>
+        <div class="off-country">India</div>
+        <div class="off-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai<br>Pondicherry</div>
+        <div class="off-phones">
+          <a href="tel:+916385151007">+91 638 51 51 007</a><br>
+          <a href="tel:+919789411476">+91 97894 11476</a>
+        </div>
+      </div>
+
+      <!-- UAE -->
+      <div class="off-card reveal d2">
+        <div class="off-flag">🇦🇪</div>
+        <div class="off-country">United Arab Emirates</div>
+        <div class="off-cities">Abu Dhabi · Dubai · Sharjah</div>
+        <div class="off-phones">
+          <a href="tel:+971522923931">+971 52 292 3931</a>
+        </div>
+      </div>
+
+      <!-- KSA -->
+      <div class="off-card reveal d3">
+        <div class="off-flag">🇸🇦</div>
+        <div class="off-country">Kingdom of Saudi Arabia</div>
+        <div class="off-cities">Jeddah · Riyadh</div>
+        <div class="off-phones">
+          <a href="tel:+966569832327">+966 56 983 2327</a>
+        </div>
+      </div>
+
+      <!-- Philippines -->
+      <div class="off-card reveal d4">
+        <div class="off-flag">🇵🇭</div>
+        <div class="off-country">Philippines</div>
+        <div class="off-cities">Manila</div>
+        <div class="off-phones">
+          <a href="tel:+639472330682">+63 947 233 0682</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
