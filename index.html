@@ -664,6 +664,186 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
   .v-grid{grid-template-columns:1fr 1fr}
   .gs-grid{grid-template-columns:repeat(3,1fr)!important}
 }
+
+/* ── GLOBAL CAREER ECOSYSTEM ────────────────────────────────────── */
+.gce-section{
+  padding:80px 56px;
+  background:var(--white);
+  border-top:1px solid rgba(10,22,40,.08);
+  border-bottom:1px solid rgba(10,22,40,.08);
+  overflow:hidden;
+}
+.gce-inner{max-width:1100px;margin:0 auto}
+.gce-eyebrow{
+  font-family:var(--fu);font-size:10px;font-weight:700;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--teal);
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;
+}
+.gce-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--teal)}
+.gce-heading{
+  font-family:var(--fd);font-size:clamp(28px,3.5vw,44px);font-weight:300;
+  color:var(--navy,#0A1628);line-height:1.08;margin-bottom:12px;
+}
+.gce-heading strong{font-weight:600}
+.gce-desc{
+  font-family:var(--fb);font-size:15px;color:var(--muted);
+  line-height:1.8;max-width:620px;margin-bottom:48px;
+}
+
+/* Logo stage */
+.gce-stage{
+  position:relative;
+  background:rgba(244,246,251,.55);
+  border:1px solid rgba(10,22,40,.07);
+  border-radius:2px;
+  padding:40px 32px;
+  overflow:hidden;
+  min-height:140px;
+  display:flex;align-items:center;justify-content:center;
+}
+/* Fade edge masks */
+.gce-stage::before,.gce-stage::after{
+  content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;
+}
+.gce-stage::before{left:0;background:linear-gradient(to right,rgba(244,246,251,.9),transparent)}
+.gce-stage::after{right:0;background:linear-gradient(to left,rgba(244,246,251,.9),transparent)}
+
+/* Carousel track */
+.gce-track{
+  display:flex;align-items:center;gap:0;
+  position:relative;width:100%;
+  justify-content:center;
+}
+
+/* Each logo slide */
+.gce-logo-slide{
+  position:absolute;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .9s ease,transform .9s ease;
+  transform:translateY(8px);
+  pointer-events:none;
+  min-width:200px;
+  text-align:center;
+}
+.gce-logo-slide.gce-active{
+  opacity:1;transform:translateY(0);pointer-events:auto;
+}
+.gce-logo-slide.gce-leaving{
+  opacity:0;transform:translateY(-8px);
+}
+
+/* Logo image */
+.gce-logo-img{
+  display:block;
+  width:auto;
+  height:56px;
+  max-width:180px;
+  object-fit:contain;
+  filter:grayscale(15%) contrast(1.05);
+  transition:filter .3s;
+}
+.gce-logo-slide:hover .gce-logo-img{filter:grayscale(0%) contrast(1.1)}
+
+/* Fallback name */
+.gce-logo-name{
+  font-family:var(--fu);font-size:18px;font-weight:700;
+  color:var(--navy,#0A1628);letter-spacing:.04em;
+  display:none;
+  padding:14px 24px;
+  border:1px solid rgba(10,22,40,.1);
+  background:var(--white);
+  min-width:160px;
+}
+
+/* Dots navigation */
+.gce-dots{
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;margin-top:28px;
+}
+.gce-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(10,22,40,.15);
+  transition:all .3s;cursor:pointer;border:none;padding:0;
+}
+.gce-dot.gce-dot-active{
+  background:var(--teal);width:20px;border-radius:3px;
+}
+
+/* Company counter */
+.gce-counter{
+  text-align:center;margin-top:16px;
+  font-family:var(--fu);font-size:11px;font-weight:500;
+  letter-spacing:.1em;color:var(--muted);
+}
+.gce-counter strong{color:var(--navy,#0A1628)}
+
+/* Desktop multi-logo strip (shows when stage is hovered / lg screen) */
+.gce-strip-wrap{
+  margin-top:32px;
+  overflow:hidden;
+  position:relative;
+}
+.gce-strip-wrap::before,.gce-strip-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;
+}
+.gce-strip-wrap::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.gce-strip-wrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+
+.gce-strip{
+  display:flex;align-items:center;gap:48px;
+  animation:gceScroll 40s linear infinite;
+  width:max-content;
+}
+.gce-strip:hover{animation-play-state:paused}
+@keyframes gceScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.gce-strip-item{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  flex-shrink:0;padding:16px 20px;
+  border:1px solid transparent;
+  transition:border-color .25s,background .25s;cursor:default;
+  border-radius:1px;
+}
+.gce-strip-item:hover{
+  border-color:rgba(10,22,40,.1);background:var(--off,#F4F6FB);
+}
+.gce-strip-img{
+  height:32px;width:auto;max-width:110px;object-fit:contain;
+  filter:grayscale(20%) contrast(1.05) opacity(0.85);
+  transition:filter .3s;
+}
+.gce-strip-item:hover .gce-strip-img{filter:grayscale(0%) contrast(1.1) opacity(1)}
+.gce-strip-name{
+  font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);display:none;
+}
+
+/* Footer note */
+.gce-note{
+  margin-top:32px;padding-top:24px;
+  border-top:1px solid rgba(10,22,40,.06);
+  font-family:var(--fb);font-size:11px;color:var(--muted);
+  line-height:1.7;text-align:center;
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .gce-logo-slide{transition:none}
+  .gce-strip{animation:none}
+  .gce-stage{min-height:auto}
+  .gce-track{position:relative;flex-wrap:wrap;gap:24px;justify-content:center}
+  .gce-logo-slide{position:relative;opacity:1;transform:none;pointer-events:auto}
+  .gce-dots,.gce-counter{display:none}
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .gce-section{padding:56px 20px}
+  .gce-stage{padding:28px 16px;min-height:120px}
+  .gce-logo-img{height:44px;max-width:140px}
+  .gce-strip{gap:32px}
+  .gce-strip-img{height:26px;max-width:90px}
+}
 </style>
 </head>
 <body>
@@ -965,7 +1145,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
         <div class="hero-stats">
           <div class="hstat"><div class="hstat-n">98%</div><div class="hstat-l">Attendance Rate</div></div>
           <div class="hstat"><div class="hstat-n">4.8</div><div class="hstat-l">Placement Score</div></div>
-          <div class="hstat"><div class="hstat-n">3</div><div class="hstat-l">Nations</div></div>
+          <div class="hstat"><div class="hstat-n">4</div><div class="hstat-l">Nations</div></div>
           <div class="hstat"><div class="hstat-n">360+</div><div class="hstat-l">Skill Modules</div></div>
         </div>
       </div>
@@ -1213,7 +1393,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
 <section class="stats-sec">
   <div class="stats-wrap">
     <div class="stat-item reveal d1"><div class="stat-n">360+</div><div class="stat-l">Skill Modules</div></div>
-    <div class="stat-item reveal d2"><div class="stat-n">3</div><div class="stat-l">Nations of Operation</div></div>
+    <div class="stat-item reveal d2"><div class="stat-n">4</div><div class="stat-l">Nations of Operation</div></div>
     <div class="stat-item reveal d3"><div class="stat-n">4.8</div><div class="stat-l">Avg Placement Score</div></div>
     <div class="stat-item reveal d4"><div class="stat-n">98%</div><div class="stat-l">Training Attendance</div></div>
   </div>
@@ -1224,7 +1404,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
   <div class="pres-inner">
     <div class="pres-left rl">
       <div class="sec-eye" style="color:var(--teal)">Global Footprint</div>
-      <h2>Operational in <strong>3 Nations.</strong></h2>
+      <h2>Operational in <strong>4 Nations.</strong></h2>
       <p>A growing presence across South Asia and the Middle East, with institutional partnerships in major education and employment hubs.</p>
     </div>
     <div class="pres-locs">
@@ -1232,7 +1412,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
         <div class="ploc-flag">🇮🇳</div>
         <div class="ploc-country">India</div>
         <div class="ploc-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div>
-        <div class="ploc-phone"><a href="tel:+916385151007">+91 638 51 51 007</a><br><a href="tel:+919789411476">+91 97894 11476</a></div>
+        <div class="ploc-phone"><a href="tel:+916385151007">+91 638 51 51 007</a><br><a href="tel:+917894114760">+91 978 94 11 476</a></div>
       </div>
       <div class="ploc reveal d2">
         <div class="ploc-flag">🇦🇪</div>
@@ -1387,7 +1567,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
   <div class="pres-inner">
     <div class="pres-left rl">
       <div class="sec-eye" style="color:var(--teal)">Global Footprint</div>
-      <h2>Operational in <strong>3 Nations.</strong></h2>
+      <h2>Operational in <strong>4 Nations.</strong></h2>
       <p>A growing presence across South Asia and the Middle East.</p>
     </div>
     <div class="pres-locs">
@@ -1395,7 +1575,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
         <div class="ploc-flag">🇮🇳</div>
         <div class="ploc-country">India</div>
         <div class="ploc-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai · Pondicherry</div>
-        <div class="ploc-phone"><a href="tel:+916385151007">+91 638 51 51 007</a><br><a href="tel:+919789411476">+91 97894 11476</a></div>
+        <div class="ploc-phone"><a href="tel:+916385151007">+91 638 51 51 007</a><br><a href="tel:+917894114760">+91 978 94 11 476</a></div>
       </div>
       <div class="ploc reveal d2">
         <div class="ploc-flag">🇦🇪</div>
@@ -1546,6 +1726,41 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
   <p style="margin-top:24px;font-size:12px;color:var(--muted);line-height:1.7">Career opportunities vary according to qualifications, experience, skills, portfolio strength, location and employer requirements.</p>
 </section>
 
+<!-- ── GLOBAL CAREER ECOSYSTEM ── -->
+<section class="gce-section">
+  <div class="gce-inner">
+
+    <div class="reveal">
+      <div class="gce-eyebrow">Global Career Ecosystem</div>
+      <h2 class="gce-heading">Career Opportunities Across<br><strong>Leading Global Companies</strong></h2>
+      <p class="gce-desc">Build skills and experience aligned with the world's leading technology, consulting, product and digital organisations.</p>
+    </div>
+
+    <!-- Single-logo animated stage -->
+    <div class="gce-stage reveal d2" id="gceStage" aria-label="Global company logo carousel">
+      <div class="gce-track" id="gceTrack">
+        <!-- Slides injected by JS -->
+      </div>
+    </div>
+
+    <div class="gce-dots" id="gceDots" role="tablist" aria-label="Company navigation"></div>
+    <div class="gce-counter" id="gceCounter"></div>
+
+    <!-- Continuous scrolling strip (desktop secondary) -->
+    <div class="gce-strip-wrap reveal d3">
+      <div class="gce-strip" id="gceStrip" aria-hidden="true">
+        <!-- Strip items injected by JS (duplicated for seamless loop) -->
+      </div>
+    </div>
+
+    <p class="gce-note">
+      The companies listed above represent global organisations where Product Management, AI Product Management and related skills are in high demand.
+      RGC Global Pathway is not affiliated with, endorsed by, or a placement partner of these organisations unless explicitly stated.
+    </p>
+
+  </div>
+</section>
+
 <section class="m-final">
   <div class="m-final-inner reveal">
     <div class="mastery-badge" style="display:inline-flex;margin-bottom:26px"><div class="mbadge-dot"></div>RGC Institute of Product Management</div>
@@ -1591,7 +1806,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
         <div class="cinfo-label">🇮🇳 India</div>
         <div class="cinfo-value">
           <a href="tel:+916385151007">+91 638 51 51 007</a><br>
-          <a href="tel:+919789411476">+91 97894 11476</a>
+          <a href="tel:+917894114760">+91 978 94 11 476</a>
         </div>
       </div>
       <div class="cinfo-item">
@@ -1607,8 +1822,8 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
         <div class="cinfo-value"><a href="tel:+639472330682">+63 947 233 0682</a></div>
       </div>
       <div class="cinfo-item"><div class="cinfo-label">Website</div><div class="cinfo-value"><a href="http://www.ratysglobalconsortium.com">www.ratysglobalconsortium.com</a></div></div>
-      <div class="cinfo-item"><div class="cinfo-label">Training Modes</div><div class="cinfo-value">Online · On Campus · SkillLab · Requested Premises</div></div>
-      <div class="cinfo-item"><div class="cinfo-label">Duration</div><div class="cinfo-value">21 Days to 6 Months, Depends on the Programme</div></div>
+      <div class="cinfo-item"><div class="cinfo-label">Training Modes</div><div class="cinfo-value">Online · Onsite · Requested Premises</div></div>
+      <div class="cinfo-item"><div class="cinfo-label">Duration</div><div class="cinfo-value">21 Days to 6 Months — Depends on the Programme</div></div>
     </div>
     <div class="cform rr d2" id="enquiry-box">
       <div class="cform-title">Send an Enquiry</div>
@@ -1672,7 +1887,7 @@ footer{background:#060E1E;padding:56px;border-top:1px solid rgba(255,255,255,.05
         <div class="off-cities">Bangalore · Chennai · Delhi<br>Kerala · Madurai · Mumbai<br>Pondicherry</div>
         <div class="off-phones">
           <a href="tel:+916385151007">+91 638 51 51 007</a><br>
-          <a href="tel:+919789411476">+91 97894 11476</a>
+          <a href="tel:+917894114760">+91 978 94 11 476</a>
         </div>
       </div>
 
@@ -1846,6 +2061,205 @@ window.addEventListener('load', () => {
   initReveal();
   if (window.scrollY > 50) document.getElementById('nav')?.classList.add('up');
 });
+
+// ── GLOBAL CAREER ECOSYSTEM ──────────────────────────────────────
+(function() {
+
+  // Company data — swap logo paths to local assets when available
+  const companies = [
+    { name:"Microsoft",    logo:"/assets/company-logos/microsoft.svg"   },
+    { name:"Google",       logo:"/assets/company-logos/google.svg"      },
+    { name:"Amazon",       logo:"/assets/company-logos/amazon.svg"      },
+    { name:"IBM",          logo:"/assets/company-logos/ibm.svg"         },
+    { name:"Accenture",    logo:"/assets/company-logos/accenture.svg"   },
+    { name:"Deloitte",     logo:"/assets/company-logos/deloitte.svg"    },
+    { name:"PwC",          logo:"/assets/company-logos/pwc.svg"         },
+    { name:"EY",           logo:"/assets/company-logos/ey.svg"          },
+    { name:"KPMG",         logo:"/assets/company-logos/kpmg.svg"        },
+    { name:"TCS",          logo:"/assets/company-logos/tcs.svg"         },
+    { name:"Infosys",      logo:"/assets/company-logos/infosys.svg"     },
+    { name:"Wipro",        logo:"/assets/company-logos/wipro.svg"       },
+    { name:"Cognizant",    logo:"/assets/company-logos/cognizant.svg"   },
+    { name:"Capgemini",    logo:"/assets/company-logos/capgemini.svg"   },
+    { name:"HCLTech",      logo:"/assets/company-logos/hcltech.svg"     },
+    { name:"Tech Mahindra",logo:"/assets/company-logos/techmahindra.svg"},
+    { name:"Oracle",       logo:"/assets/company-logos/oracle.svg"      },
+    { name:"SAP",          logo:"/assets/company-logos/sap.svg"         },
+    { name:"Adobe",        logo:"/assets/company-logos/adobe.svg"       },
+    { name:"Salesforce",   logo:"/assets/company-logos/salesforce.svg"  },
+  ];
+
+  const INTERVAL  = 2800;  // ms per company
+  const TRANS     = 900;   // ms transition (matches CSS)
+
+  let current   = 0;
+  let timer     = null;
+  let slides    = [];
+  let dots      = [];
+  let reduced   = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  // Build a slide element
+  function makeSlide(c, idx) {
+    const slide = document.createElement('div');
+    slide.className = 'gce-logo-slide';
+    slide.setAttribute('role', 'tabpanel');
+    slide.setAttribute('aria-label', c.name);
+    slide.dataset.idx = idx;
+
+    // Image
+    const img = document.createElement('img');
+    img.className = 'gce-logo-img';
+    img.alt       = c.name + ' logo';
+    img.src       = c.logo;
+    img.loading   = 'lazy';
+
+    // Fallback: if image fails → show text name
+    img.onerror = function() {
+      this.style.display = 'none';
+      fallback.style.display = 'block';
+    };
+
+    // Fallback text element
+    const fallback = document.createElement('div');
+    fallback.className  = 'gce-logo-name';
+    fallback.textContent = c.name;
+
+    slide.appendChild(img);
+    slide.appendChild(fallback);
+    return slide;
+  }
+
+  // Build a strip item
+  function makeStripItem(c) {
+    const item = document.createElement('div');
+    item.className = 'gce-strip-item';
+    item.title = c.name;
+
+    const img = document.createElement('img');
+    img.className = 'gce-strip-img';
+    img.alt       = c.name + ' logo';
+    img.src       = c.logo;
+    img.loading   = 'lazy';
+
+    const name = document.createElement('div');
+    name.className   = 'gce-strip-name';
+    name.textContent = c.name;
+
+    img.onerror = function() {
+      this.style.display = 'none';
+      name.style.display = 'block';
+    };
+
+    item.appendChild(img);
+    item.appendChild(name);
+    return item;
+  }
+
+  function init() {
+    const track   = document.getElementById('gceTrack');
+    const dotsEl  = document.getElementById('gceDots');
+    const counter = document.getElementById('gceCounter');
+    const strip   = document.getElementById('gceStrip');
+
+    if (!track) return;
+
+    // Build main slides
+    companies.forEach((c, i) => {
+      const s = makeSlide(c, i);
+      track.appendChild(s);
+      slides.push(s);
+
+      // Dot
+      const d = document.createElement('button');
+      d.className = 'gce-dot';
+      d.setAttribute('role', 'tab');
+      d.setAttribute('aria-label', 'Show ' + c.name);
+      d.onclick = () => { stopAuto(); goTo(i); };
+      dotsEl.appendChild(d);
+      dots.push(d);
+    });
+
+    // Build strip (items × 2 for seamless loop)
+    if (strip) {
+      [...companies, ...companies].forEach(c => strip.appendChild(makeStripItem(c)));
+    }
+
+    // Show first
+    goTo(0);
+
+    // Reduced motion — static grid
+    if (reduced) {
+      slides.forEach(s => { s.classList.add('gce-active'); });
+      if (counter) counter.style.display = 'none';
+      return;
+    }
+
+    startAuto();
+  }
+
+  function goTo(idx) {
+    const counter = document.getElementById('gceCounter');
+
+    // Remove active / add leaving
+    slides.forEach((s, i) => {
+      if (s.classList.contains('gce-active')) {
+        s.classList.remove('gce-active');
+        s.classList.add('gce-leaving');
+        setTimeout(() => s.classList.remove('gce-leaving'), TRANS);
+      }
+      dots[i] && dots[i].classList.remove('gce-dot-active');
+    });
+
+    current = (idx + companies.length) % companies.length;
+    slides[current].classList.add('gce-active');
+    dots[current] && dots[current].classList.add('gce-dot-active');
+
+    if (counter) {
+      counter.innerHTML = '<strong>' + (current + 1) + '</strong> / ' + companies.length;
+    }
+  }
+
+  function next() { goTo(current + 1); }
+
+  function startAuto() { timer = setInterval(next, INTERVAL); }
+  function stopAuto()  { clearInterval(timer); timer = null; }
+
+  // Pause on hover
+  document.addEventListener('DOMContentLoaded', () => {
+    const stage = document.getElementById('gceStage');
+    if (stage) {
+      stage.addEventListener('mouseenter', stopAuto);
+      stage.addEventListener('mouseleave', () => { if (!reduced) startAuto(); });
+      stage.addEventListener('focus', stopAuto, true);
+    }
+  });
+
+  // Init on load (and re-init when mastery page becomes visible)
+  function tryInit() {
+    if (document.getElementById('gceTrack')) {
+      init();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryInit);
+  } else {
+    setTimeout(tryInit, 0);
+  }
+
+  // Re-run when mastery page is activated via go()
+  const origGo = window.go;
+  window.go = function(name) {
+    if (origGo) origGo(name);
+    if (name === 'mastery') {
+      setTimeout(() => {
+        if (slides.length === 0) init();
+      }, 100);
+    }
+  };
+
+})();
+
 </script>
 
 
