@@ -9,18 +9,8 @@
 <meta property="og:url" content="https://www.ratysglobalconsortium.com">
 <link rel="canonical" href="https://www.ratysglobalconsortium.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-/* ═══ MOBILE FIX: stop sideways drift / cut-off content on phones ═══ */
-html,body{overflow-x:hidden;max-width:100%}
-@media(max-width:900px){
-  .rr,.rl{transform:translateY(24px)}
-  .rr.on,.rl.on{transform:none}
-  .miss-inner{grid-template-columns:1fr!important}
-}
-@media(max-width:768px){
-  .foot-links{flex-wrap:wrap;gap:12px 20px}
-  .foot-copy{max-width:100%;word-break:break-word}
-}
-  <style>
+  
+<style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#0A1628;--cobalt:#0F2D6B;--royal:#1347A0;--sky:#1E6FD9;
@@ -2346,5 +2336,17 @@ window.addEventListener('load', () => {
 
   <script>window.RGC_PDF_BASE='/rgc-site-package/downloads/';</script>
 <script src="/rgc-site-package/rgc-profile-downloads.js" defer></script>
+  <style>
+html,body{overflow-x:hidden;max-width:100%}
+@media(max-width:900px){
+  .rr,.rl{transform:translateY(24px)}
+  .rr.on,.rl.on{transform:none}
+  .miss-inner{grid-template-columns:1fr!important}
+}
+@media(max-width:768px){
+  .foot-links{flex-wrap:wrap;gap:12px 20px}
+  .foot-copy{max-width:100%;word-break:break-word}
+}
+</style>
 </body>
 </html>
