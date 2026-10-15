@@ -5,7 +5,7 @@
  * Adds, on EVERY page/section:
  *   1. A floating, flashing "Download Profiles" dock (bottom-left) with both PDFs
  *   2. A "Company Profiles" section with cover previews, placed above each footer
- *   3. Flashing download links in the footer
+ *   3. (footer buttons removed - profiles section above the footer is enough)
  *   4. Any element with data-rgc-pdf="skilllab" or data-rgc-pdf="workforce"
  *      becomes a flashing download button (use it in cards, nav, hero, etc.)
  *
@@ -169,13 +169,6 @@
       });
       if (ft) ft.parentNode.insertBefore(sec, ft); else document.body.appendChild(sec);
 
-      /* 3. footer strip */
-      if (ft) {
-        var strip = document.createElement('div');
-        strip.className = 'rgc-foot-dl';
-        ORDER.forEach(function (k, i) { strip.appendChild(button(k, (i + 1) + '. ' + FILES[k].title)); });
-        ft.insertBefore(strip, ft.firstChild);
-      }
     });
 
     /* 4. manual hooks: <a data-rgc-pdf="skilllab">Download</a> */
