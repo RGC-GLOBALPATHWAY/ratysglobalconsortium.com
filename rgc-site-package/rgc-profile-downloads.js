@@ -26,7 +26,7 @@
       short: 'Skill Lab Brochure',
       sub: 'SkillLab · TalentBridge · TalentOS',
       desc: 'Skills training, placement outcomes, 360+ modules and our global partner network for institutions.',
-      file: 'RGC-Skill-Lab-Brochure.pdf',
+      file: 'RGC%20Skill%20Lab%20Brochure.pdf',
       cover: 'cover-skilllab.jpg',
       meta: 'PDF · 20 pages · 18 MB',
       name: 'RGC Skill Lab Brochure.pdf'
